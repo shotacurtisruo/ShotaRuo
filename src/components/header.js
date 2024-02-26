@@ -11,7 +11,7 @@ export const Header = () => {
                 <a href="/#">Home</a>
                 <a href="/#">My Projects</a>
                 <a href="/#">About Me</a>
-                <a href="linkedin.com/in/shota-ruo-248b9b2b6">Linkedln</a> {/* External link */}
+                <a href="/#">Linkedln</a> {/* External link */}
             </nav>
         </header>
     )
