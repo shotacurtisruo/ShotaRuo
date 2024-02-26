@@ -1,0 +1,18 @@
+header{
+    display: flex;
+    padding: 0 5rem; 
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    background-color: blueviolet;
+}
+
+nav a{
+    margins: 0 10px;
+    color: blanchedalmond
+}
+
+nav a:hover {
+    color:aqua
+
+}
