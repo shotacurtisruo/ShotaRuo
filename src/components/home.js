@@ -18,16 +18,21 @@ export const Home = () => {
     function displayParagraph() {
         setDisplay(inputBox)
     }
+    function sayHello() {
+        alert('Hello my name is Shota Ruo.');
+    }
+    
 
     return (
         <div>
-            <h1 className='red'>Home</h1>
+            <h1 className='black'>Home</h1>
             {/* <p>This is the number of times clicked: {clicked}.</p>
-            <button onClick={handleClick}>click me!</button> */}
+    <button onClick={handleClick}>click me!</button> */}
 
             <p>{display}</p>
-            <input value={inputBox} onChange={handleTyping}/>
+            <input value={inputBox} onChange={handleTyping} />
             <button onClick={displayParagraph}>submit form</button>
+            <button onClick={sayHello}>Say Hello</button>
         </div>
     )
 }
