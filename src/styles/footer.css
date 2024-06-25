@@ -1,0 +1,24 @@
+footer {
+ /* Background color of the footer */
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    color: black; /* Text color of the footer */
+    padding: 2px; /* Padding around the content inside the footer */
+    text-align: center; /* Center-align the text */
+    position: fixed; /*Position the footer at the bottom of the viewport */
+    left: 0;
+    bottom: 0%;
+    width: 100%; /* Make the footer span the full width of the viewport */
+    height: -20%;
+    background-color: yellowgreen;
+    transition: bottom 0.5s ease;
+
+    
+    
+}
+footer.visible{
+    bottom: 0;
+}
+
+

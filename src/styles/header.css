@@ -1,18 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header{
     display: flex;
     padding: 0 5rem; 
     align-items: center;
     justify-content: space-between;
-    height: 80px;
-    background-color: blueviolet;
+    height: 70px;
+    background-color: yellowgreen;
+    font-family: 'Gaegu';
+    font-size: larger;
 }
 
 nav a{
-    margins: 0 10px;
-    color: blanchedalmond
+    color: black;
+    margin-right: 10px; 
 }
 
-nav a:hover {
+nav a:hover { 
     color:aqua
 
+}
+.header-title{
+    font-family:'Gaegu'
 }
