@@ -6,7 +6,7 @@ export const AboutMe = () => {
     return (
         <div id='main'>
             
-            <h1>About Me</h1>
+            <h1>About Shota</h1>
             <p>I am currently a second year studying statistics on the data science
                 <br></br>track
                 at
