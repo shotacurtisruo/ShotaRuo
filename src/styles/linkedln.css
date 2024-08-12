@@ -8,3 +8,8 @@
     background-color: palegoldenrod;
 
 }
+.doraemon {
+    width: 80vw; /* Set the width to 80% of the viewport width */
+    height: auto; /* Maintain aspect ratio */
+
+}

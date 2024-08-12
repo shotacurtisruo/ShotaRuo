@@ -12,8 +12,7 @@ export const Linkedln = () => {
                 Connecting will be greatly appreciated!<br></br>
                 Am always looking forward to meeting and talking to new individuals!</p>
             </h2>
-            <img src='https://www.latevaweb.com/web-design/fullwidth-doraemon.png' alt='doraemon' width="800" height={320}></img>
-
+            <img src="https://www.latevaweb.com/web-design/fullwidth-doraemon.png" alt="doraemon" class="doraemon"></img>
          
             
     
