@@ -21,7 +21,7 @@ export const Home = () => {
             <div className='flip-card'>
                 <div className='flip-card-inner'>
                     <div className='flip-card-front'>
-                        <img src='https://media.licdn.com/dms/image/D5603AQH8tjUgPKF_bQ/profile-displayphoto-shrink_400_400/0/1709419355281?e=1724284800&v=beta&t=dlUFsunl9HaGKkzChOGmxcbjiuNLSUYd30tJwbF3KsY' width={300} height={300} id='self-portrait' alt="self portrait"></img>
+                        <img src="images/pxArt.png" width={300} height={300} id='self-portrait' alt="self portrait"></img>
                     </div>
 
                     <div className='flip-card-back'>
