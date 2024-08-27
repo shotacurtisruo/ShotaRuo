@@ -7,8 +7,8 @@ export const AboutMe = () => {
         <div id='main'>
             
             <h1>About Shota</h1>
-            <p>I am currently a second year studying statistics on the data science
-                <br></br>track
+            <p>I am currently a third year studying computer science 
+                <br></br>
                 at
                 UC Davis. During my free time, I have been<br></br>
                 learning web development to expand
