@@ -29,8 +29,9 @@ export const AboutMe = () => {
             <h2>Skills</h2>
             <div className='skillList'>
             
-            <li>Front-end development</li>
-            <li>CSS (cascading style sheets)</li>
+            <li>Firebase</li>
+            <li>Web development</li>
+            <li>CSS</li>
             <li>HTML</li>
             <li>C</li>
             <li>Python</li>
