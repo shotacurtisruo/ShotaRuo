@@ -15,7 +15,7 @@ export const Home = () => {
 
     return (
         <div className="home-container" style={{backgroundColor}}>
-            <h2 id='homePageText'>Welcome to the Home Page!</h2>
+            <h2 id='homePageText'>I am Shota Ruo</h2>
             
             <p id='webDevText'>Hello. This is Shota; an aspiring web developer.</p>
             <div className='flip-card'>
@@ -40,8 +40,8 @@ export const Home = () => {
             </div>
             <p>(Hint: try hovering over my portrait to know more about me!)</p>
 
-            <h4>Click on me to mess around with the backgroud:</h4>
-            <button onClick={generateRandomColor}>Change Background Color</button>
+            
+            
             
         </div>
     );
