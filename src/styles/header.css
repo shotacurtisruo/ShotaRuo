@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 header{
     display: flex;
     padding: 0 5rem; 
@@ -13,7 +14,12 @@ header{
     background-color: yellowgreen;
     font-family: 'Gaegu';
     font-size: larger;
+    border-radius: 0px 0px 10px 10px;
 }
+header :hover{
+    font-size: 20px;
+}
+
 
 nav a{
     color: black;
@@ -26,4 +32,7 @@ nav a:hover {
 }
 .header-title{
     font-family:'Gaegu'
+}
+.header-title:hover{
+   
 }

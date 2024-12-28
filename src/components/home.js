@@ -16,12 +16,13 @@ export const Home = () => {
     return (
         <div className="home-container" style={{backgroundColor}}>
             <h2 id='homePageText'>I am Shota Ruo</h2>
-            
+            <div className ='home-container2'>
             <p id='webDevText'>Hello. This is Shota; an aspiring web developer.</p>
+            
             <div className='flip-card'>
                 <div className='flip-card-inner'>
                     <div className='flip-card-front'>
-                        <img src="images/pxArt.png" width={300} height={300} id='self-portrait' alt="self portrait"></img>
+                        <img src="images/ShotaRuoMAIN.JPG" width={300} height={300} id='self-portrait' alt="self portrait"></img>
                     </div>
 
                     <div className='flip-card-back'>
@@ -38,7 +39,8 @@ export const Home = () => {
 
             
             </div>
-            <p>(Hint: try hovering over my portrait to know more about me!)</p>
+            </div>
+            <p>(replacement text fill below in column type text)</p>
 
             
             

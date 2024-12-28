@@ -5,7 +5,7 @@ import { AboutMe } from './components/aboutMe';
 import { Error } from './components/error';
 import { Header } from './components/header';
 import { Linkedln } from './components/linkedln';
-import { Footer } from './components/footer';
+
 import { MyProjects } from './components/myProjects';
 
 
@@ -29,7 +29,7 @@ function App() {
       
       </main>
       
-      <Footer />
+      
     </div>
   );
 }
