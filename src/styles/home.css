@@ -1,3 +1,5 @@
+
+
 .home-container {
     display: flex;
     flex-direction: column;
@@ -5,16 +7,67 @@
     justify-content: center;
     
      /* Ensures the container takes up full viewport height */
+    height: 100%;
+
+    animation: gradientBack 20s infinite;
      
 
+}
+@keyframes gradientBack {
+    0%{background-color: palegoldenrod;}
+    50%{background-color: lightgray;}
+    100%{background-color: palegoldenrod;}
+}
+@keyframes slideIn{
+    from {transform:translateX(-100%); opacity: 0;}
+    to {transform:translateX(0%); opacity: 1;}
+}
+
+@keyframes slideInfaster{
+    from {transform:translateX(-100%); opacity: 0;}
+    to {transform:translateX(0%); opacity: 1;}
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 .home-container2{
     display: flex;
     flex-direction: row;
-   
+    min-height: 50vh;
     align-items: center;
 }
-
+.home-container2-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    animation: slideInfaster 3s ease-out backwards;
+}
+.home-container2-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    animation: slideUp 3s ease-out backwards;
+    
+}
+#homePageText{
+    font-size: 9vh;
+    animation: slideIn 5s ease-out forwards;
+}
+#webDevText{
+    font-size: 4vh;
+    font-size: 3vw;
+    padding: 20px;
+}
 
 .flip-card {
     background-color: transparent;
@@ -95,4 +148,8 @@ button:hover {
     background-color: #21a1f1;
     color: white;
     transform: scale(1.05);
+}
+#replacement-text{
+    opacity: 0;
+    animation: fadeIn 3s ease-out 3s forwards;
 }
