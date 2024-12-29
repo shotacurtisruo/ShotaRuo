@@ -71,8 +71,8 @@
 
 .flip-card {
     background-color: transparent;
-    width: 20vw;
-    height: 20vw;
+    width: 25vw;
+    height: 25vw;
     perspective: 1000px;
     
 
@@ -110,13 +110,32 @@
 }
 
 .flip-card-back {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     transform: rotateY(180deg);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
+}
+.flip-card-back p{
+    transition:transform 0.3s ease;
+    font-weight: bold;
+}
+.flip-card-back p:hover{
+    transform: scale(1.4);
+}
+.flip-card-back ul {
+    list-style-type: none;
+    padding: 0;
+}
+.flip-card-back li  {
+    transition: transform 0.3s ease;
+
+}
+.flip-card-back li:hover {
+    transform: scale(1.4);
 }
 .flip-card-front a {
     display: block;

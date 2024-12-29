@@ -24,12 +24,14 @@ export const Home = () => {
 
                             <div className='flip-card-back'>
 
-                                <p id='hobbies'>Hobbies I have aside from coding and academics:
-                                    <li>Walking my dog</li>
-                                    <li>Playing basketball with friends</li>
-                                    <li>Going to the gym and working out</li>
-                                    <li>Exploring outside and going on hikes</li>
-                                </p>
+                                <p id='hobbies'>About Me:</p>
+                                    <ul>
+                                        <li>Currently at UC Davis studying Computer Science</li>
+                                        <li>I have fun creating webpages for non-profits and others.</li>
+                                        <li>I am very fond with working with teams and communicating</li>
+                                        <li>Some of my other hobbies are Basketball and Chess</li>
+                                    </ul>
+                                
 
                             </div>
                         </div>
