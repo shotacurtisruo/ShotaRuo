@@ -36,6 +36,11 @@
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+@keyframes goUp{
+    from {transform: translateY(100%); opacity: 0;}
+    to {transform: translateY(0%); opacity: 1;}
+}
 .home-container2{
     display: flex;
     flex-direction: row;
@@ -67,6 +72,23 @@
     font-size: 4vh;
     font-size: 3vw;
     padding: 20px;
+}
+.wordMain{
+    display: inline-block;
+    transition:transform 0.3s ease;
+
+}
+.wordMain:hover{
+    transform:scale(1.4)
+}
+
+.word{
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.word:hover{
+    transform:scale(1.3)
 }
 
 .flip-card {
@@ -160,6 +182,8 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     margin-bottom: 50px;
+    width: 25vw;
+    height: auto;
 
 }
 
@@ -171,4 +195,21 @@ button:hover {
 #replacement-text{
     opacity: 0;
     animation: fadeIn 3s ease-out 3s forwards;
+}
+input[type="email"] {
+    font: size 2vh;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 35vw;
+}
+.home-container3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 15vh;
+    
+    animation: fadeIn 6s ease-in backwards;
 }

@@ -18,7 +18,7 @@ header{
     border-radius: 0px 0px 10px 10px;
 }
 header :hover{
-    font-size: 20px;
+    transform: scale(1.2);
 }
 
 
