@@ -20,9 +20,7 @@ You can install the files, unzip them, and add install to your Chrome extensions
             <p>Website for a small basketball clinic I hosted during the summer. Focus on styling: bento grids and glows.</p>
             <a href='https://shoota-hoops.web.app/' target='_blank' rel='noopener noreferr'>Shoota-Hoops Main Website</a>
 
-            <h3>PokeSaver</h3>
-            <p>Still in progress: Create a  webpage where users can search their pokemon and learn about their stats and descrription. Will allow the user to favorite a pokemon that will save a sprite of the pokemon in a visiblepokemon box, that they will be able to manage and play with. Will extract data from online pokemon API.</p>
-
+        
             <h3>Former member at #INCLUDE</h3>     
             <a href='https://includedavis.com/' target="_blank" rel='noopener noreferr'>#INCLUDE Homepage (Click to View)</a> 
         </div>

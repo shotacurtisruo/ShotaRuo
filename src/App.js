@@ -4,7 +4,7 @@ import { Home } from './components/home';
 import { AboutMe } from './components/aboutMe';
 import { Error } from './components/error';
 import { Header } from './components/header';
-import { Linkedln } from './components/linkedln';
+ 
 
 import { MyProjects } from './components/myProjects';
 
@@ -22,7 +22,7 @@ function App() {
           <Route path='/myprojects' element={<MyProjects/>}/>
           <Route path='/aboutme' element={<AboutMe/>}/>
           <Route path='/*' element={<Error/>}/>
-          <Route path='/linkedln' element={<Linkedln/>}/>
+          
          
         </Routes>
       </Router>
