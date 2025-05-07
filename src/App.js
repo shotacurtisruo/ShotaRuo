@@ -1,8 +1,7 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import { Home } from './components/home';
 import { AboutMe } from './components/aboutMe';
-import { Error } from './components/error';
 import { Header } from './components/header';
  
 
@@ -14,19 +13,18 @@ function App() {
     <div className="App">
      
       <Header/>
-      <main className='main-content' style={{backgroundColor:'palegoldenrod'}}>
-      <Router>
-
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/myprojects' element={<MyProjects/>}/>
-          <Route path='/aboutme' element={<AboutMe/>}/>
-          <Route path='/*' element={<Error/>}/>
-          
-         
-        </Routes>
-      </Router>
+      <main className='main-content' >
+        <section id="home">
+          <Home />
+        </section>
+        <section id="aboutme">
+          <AboutMe />
+        </section>
+        <section id="myprojects">
+          <MyProjects />
+        </section>
       
+
       </main>
       
       

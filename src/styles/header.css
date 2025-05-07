@@ -6,24 +6,27 @@
 
 
 header{
+
     display: flex;
     padding: 0 5rem; 
     align-items: center;
     justify-content: space-between;
     min-height: 15vh;
     height: auto;
-    background-color: yellowgreen;
-    font-family: 'Gaegu';
+    background-color: black;
+    color: white;
+    font-family: "Nunito Sans", sans-serif;
     font-size: larger;
     border-radius: 0px 0px 10px 10px;
+    
 }
 header :hover{
-    transform: scale(1.2);
+    transform: scale(1.12);
 }
 
 
 nav a{
-    color: black;
+    color: white;
     margin-right: 10px; 
 }
 
@@ -32,8 +35,7 @@ nav a:hover {
 
 }
 .header-title{
-    font-family:'Gaegu'
-}
-.header-title:hover{
+    font-family: "Nunito Sans", sans-serif;
+    color: white;
    
 }

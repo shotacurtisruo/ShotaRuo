@@ -63,7 +63,7 @@ export const Home = () => {
 
                                 <p id='hobbies'>About Me:</p>
                                     <ul>
-                                        <li>Currently at UC Davis studying Computer Science</li>
+                                        <li>I am a third year studying CS @ UC Davis</li>
                                         <li>I have fun creating webpages for non-profits and others.</li>
                                         <li>I am very fond with working with teams and communicating</li>
                                         <li>Some of my other hobbies are Basketball and Chess</li>
@@ -75,7 +75,7 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className='home-container3'>
+           {/* <div className='home-container3'>
                 <h3>Contact Me</h3>
                 {!submitted ? (
                     <form onSubmit={handleSubmit}>
@@ -92,6 +92,8 @@ export const Home = () => {
                     <p>Thank you for submitting your email!</p> 
                 )}
             </div>
+            */}
+            
         </div>
 
 
