@@ -1,0 +1,222 @@
+.experience-header {
+    text-align: center;
+    margin-bottom: 20px; /* Add spacing below the header */
+    animation: fadeIn 2s ease-in-out; /* Apply fade-in animation */
+}
+
+.experience-header h1 {
+    font-size: 3rem; /* Make the header stand out */
+    font-weight: bold;
+    color: #ffffff; /* White text color */
+    /* Remove the glowing effect */
+    /* text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); */
+    margin: 0;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Start slightly above */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Move to original position */
+    }
+}
+/* Bento Box */
+.bento-box {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    width: 75%; /* Reduce width to 75% of the screen */
+    margin: 0 auto; /* Center the box horizontally */
+    padding: 20px; /* Add padding inside the box */
+    border-radius: 20px; /* Rounded corners */
+    position: relative; /* Required for the glow effect */
+    overflow: visible; /* Prevent the glow from spilling outside */
+    visibility: visible; /* Ensure content is visible */
+    color: black; /* Text color */
+    text-align: center; /* Center-align text */
+    background-color: #ffffff; /* Plain white background */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    border: none; /* Remove any border */
+    margin-bottom: 40px; /* Add spacing between the boxes */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+    height: auto; /* Adjust height to fit content */
+   
+}
+
+.bento-box, .inner-box {
+    color: inherit; /* Inherit color from the body or explicitly set it */
+}
+
+/* Hover Glow Effect */
+.bento-box:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6); /* Glowing effect */
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Glow Effect */
+.bento-box::before {
+    content: '';
+    position: absolute;
+    top: var(--mouse-y, 50%); /* Dynamically updated by JavaScript */
+    left: var(--mouse-x, 50%); /* Dynamically updated by JavaScript */
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent 60%);
+    border-radius: 50%; /* Make the glow circular */
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Prevent the glow from interfering with mouse events */
+    mix-blend-mode: screen; /* Blend the glow with the background */
+    opacity: 0; /* Subtle glow */
+    transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.bento-box:hover::before {
+    opacity: 1; /* Make the glow more visible */
+}
+
+/* Smooth Gradient Animation */
+@keyframes randomInfiniteGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Main Container */
+#main {
+    height: auto; /* Adjust this later if needed */
+}
+
+/* Inner Box */
+.inner-box {
+    display: flex; /* Enable horizontal alignment */
+    justify-content: space-between; /* Add space between the two sections */
+    align-items: center; /* Center content vertically */
+    padding: 10px; /* Reduce padding to make the box less tall */
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: black;
+    overflow: visible; /* Ensure content is not clipped */
+    visibility: visible; /* Ensure content is visible */
+}
+
+/* Left Section: Job Details */
+.job-details {
+    flex: 7; /* Take up 80% of the width */
+    color: black !important; /* Force the text color to black */
+    font-family: "Nunito Sans", sans-serif; /* Font style */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+
+/* Right Section: Company Logo */
+.company-logo {
+    flex: 3; /* Take up 20% of the width */
+    display: flex; /* Enable flexbox for alignment */
+    justify-content: center; /* Center the logo horizontally */
+    align-items: center; /* Center the logo vertically */
+    height: 100%; /* Ensure the container fills the height of the parent */
+}
+
+/* Logo Image */
+.company-logo img {
+    max-width: 80%; /* Reduce the width of the image */
+    max-height: 120px; /* Reduce the height of the image */
+    object-fit: contain; /* Maintain aspect ratio */
+    border: 2px solid silver; /* Add a silver border around the image */
+    border-radius: 10px; /* Add rounded corners to the border */
+    padding: 5px; /* Add padding inside the border for spacing */
+    background-color: #ffffff; /* Optional: Add a white background behind the image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Tech Stack Container */
+.tech-stack-container {
+    width: 75%; /* Set the width of the container */
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 20px; /* Rounded corners for a sleek look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 15px 0; /* Reduce vertical padding */
+    margin: 40px auto; /* Center the container horizontally and add spacing above */
+    overflow: hidden; /* Hide overflowing content */
+    position: relative; /* Ensure proper positioning for the scrolling effect */
+}
+
+/* Tech Stack Heading */
+.tech-stack-heading {
+    text-align: center; /* Center the heading */
+    font-size: 1.5rem; /* Adjust the font size */
+    font-weight: bold; /* Make the text bold */
+    color: #ffffff; /* White text color */
+    margin-bottom: -50px; /* Reduce spacing below the heading */
+    font-family: "Nunito Sans", sans-serif; /* Match the font style */
+}
+
+/* Tech Stack Reel */
+.tech-stack-reel {
+    width: 75%; /* Slightly smaller than the container for padding */
+    margin: 0 auto; /* Center the reel inside the container */
+    overflow: hidden; /* Hide overflowing content */
+    position: relative; /* Ensure proper positioning for the scrolling effect */
+    border: 2px solid silver; /* Keep the silver border */
+    border-radius: 10px; /* Add rounded corners to match the design */
+    padding: 0; /* Remove padding to eliminate the white frame */
+    background-color: transparent; /* Remove the white background */
+    height: 70px; /* Height of the reel */
+    display: flex; /* Enable flexbox for vertical alignment */
+    align-items: center; /* Center content vertically */
+}
+
+/* Tech Stack */
+.tech-stack {
+    display: flex; /* Arrange icons in a row */
+    gap: 40px; /* Reduce the spacing between icons */
+    align-items: center; /* Center icons vertically */
+    justify-content: flex-start; /* Align icons to the start */
+    flex-wrap: nowrap; /* Prevent icons from wrapping to the next line */
+    padding: 0; /* Remove unnecessary padding */
+    margin: 0; /* Remove unnecessary margin */
+}
+
+.tech-stack img {
+    width: 40px; /* Set a uniform size for all icons */
+    height: 40px; /* Set a uniform size for all icons */
+    object-fit: contain; /* Ensure icons maintain their aspect ratio */
+    margin: 0; /* Remove any extra margins */
+    padding: 0; /* Remove any extra padding */
+}
+
+
+
+
+/* Tech Stack Caption */
+.tech-stack-caption {
+    text-align: center;
+    font-size: 0.9rem; /* Make the caption smaller */
+    font-weight: bold;
+    color: #333; /* Dark gray for contrast */
+    margin-bottom: 5px; /* Reduce spacing below the caption */
+    font-family: "Oswald", sans-serif;
+}
+
+/* Scrolling Animation */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0); /* Start at the initial position */
+    }
+    100% {
+        transform: translateX(-50%); /* Move the entire set of icons out of view */
+    }
+}

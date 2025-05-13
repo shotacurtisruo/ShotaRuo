@@ -1,11 +1,10 @@
 import './App.css';
 
 import { Home } from './components/home';
-import { AboutMe } from './components/aboutMe';
+import { Experience } from './components/experience';
 import { Header } from './components/header';
- 
-
 import { MyProjects } from './components/myProjects';
+import { Footer } from './components/footer';
 
 
 function App() {
@@ -17,8 +16,8 @@ function App() {
         <section id="home">
           <Home />
         </section>
-        <section id="aboutme">
-          <AboutMe />
+        <section id="experience">
+          <Experience />
         </section>
         <section id="myprojects">
           <MyProjects />
@@ -26,6 +25,7 @@ function App() {
       
 
       </main>
+      <Footer />
       
       
     </div>

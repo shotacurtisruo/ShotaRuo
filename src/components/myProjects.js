@@ -1,29 +1,47 @@
 import React from 'react';
-import styles from '../styles/myProjects.css'
+import { Fade } from 'react-awesome-reveal'; // Import the Fade animation
+import '../styles/myProjects.css'; // Import the styles
 
 export const MyProjects = () => {
     return (
-        <div id='main'>
-            <h1 style={{color: 'black'}}>My Projects:</h1>
-                <p>Here are the list of projects I have done or am currently working
-                on:
-                </p>
-            <h3>Link to my Github:</h3>
-            <a href='https://github.com/shotacurtisruo?tab=repositories' target="_blank" rel="noopener noreferr">(Click to View)</a>
+        <div id="main">
+            <h1 className="projects-heading">My Projects:</h1>
+            
+            <div className="projects-container">
+                {/* Project 1 */}
+                <Fade duration={3000}>
+                    <div className="project-box">
+                        <div className="project-image">
+                            <img src="/images/icon.png" alt="Web Chrome Extension" />
+                        </div>
+                        <div className="project-content">
+                            <h3>Web Chrome Extension</h3>
+                            <p>
+                                Chrome extension that allows users to save and store links or tabs directly on their computer, providing a convenient way to manage and access their browsing sessions.
+                            </p>
+                            <a href="https://github.com/shotacurtisruo/chrome-web-browser-version-1.1" target="_blank" rel="noopener noreferrer">Source Code on Github</a>
+                        </div>
+                    </div>
+                </Fade>
 
-            <h3>Web Chrome Extension</h3>
-            <p>Chrome web extension that allows users to save and store links and tabs directly on their computer, providing a convenient way to manage and access their browsing sessions.
-You can install the files, unzip them, and add install to your Chrome extensions (must enable developer mode).</p>
-            <a href='https://github.com/shotacurtisruo/chrome-web-browser-version-1.1' target='_blank' rel='noopener noreferr'>Source Code on Github:</a>
+                {/* Project 2 */}
+                <Fade duration={3000}>
+                    <div className="project-box">
+                        <div className="project-image">
+                            <img src="/images/KSC.png" alt="KSC" />
+                        </div>
+                        <div className="project-content">
+                            <h3>KSC temp Website</h3>
+                            <p>
+                                Website I built for Kefli Sports Club (KSC) to provide information about the club, its activities, and events in the early stages.
+                            </p>
+                            <a href="https://kefli-sports-club.web.app/" target="_blank" rel="noopener noreferrer">KSC Webpage</a>
+                        </div>
+                    </div>
+                </Fade>
 
-            <h3>Shoota-Hoops</h3>
-            <p>Website for a small basketball clinic I hosted during the summer. Focus on styling: bento grids and glows.</p>
-            <a href='https://shoota-hoops.web.app/' target='_blank' rel='noopener noreferr'>Shoota-Hoops Main Website</a>
-
-        
-            <h3>Former member at #INCLUDE</h3>     
-            <a href='https://includedavis.com/' target="_blank" rel='noopener noreferr'>#INCLUDE Homepage (Click to View)</a> 
+                {/* Add more projects as needed */}
+            </div>
         </div>
-        
-    )
-}
+    );
+};

@@ -1,0 +1,74 @@
+/* General Styles */
+#main {
+    font-family: "Nunito Sans", sans-serif;
+    padding: 20px;
+    background-color: #000000; /* Black background */
+    color: white; /* Default text color for contrast */
+}
+
+.projects-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: white; /* White text for the heading */
+    margin-bottom: 20px;
+}
+
+/* Projects Container */
+.projects-container {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(2, 1fr); /* Create 2 equal-width columns */
+    gap: 20px; /* Add spacing between rows and columns */
+    margin-top: 20px;
+    padding: 0 10%; /* Add 10% padding on the left and right for outer spacing */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    overflow: visible;;
+}
+
+/* Project Box */
+.project-box {
+    background-color: white; /* White background for the box */
+    border: 2px solid silver; /* Silver outline */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner padding for content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    min-height: 40vh;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    width: 35vw;
+}
+
+/* Hover Effect */
+.project-box:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Project Image */
+.project-image {
+    position: relative; /* Ensure the image stays within its container */
+    overflow: hidden; /* Prevent the enlarged image from overflowing */
+    border: 2px solid white; /* Add a white border around the image */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    width: 40%; /* Set the width to 70% of the parent box */
+    margin: 0 auto; /* Center the image horizontally */
+    
+}
+
+/* Image inside the Project Image */
+.project-image img {
+    width: 100%; /* Ensure the image fills the container's width */
+    height: 100%; /* Ensure the image fills the container's height */
+    object-fit: cover; /* Scale the image to cover the container while maintaining aspect ratio */
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+/* Hover Effect */
+.project-image:hover {
+    transform: scale(1.05); /* Slightly enlarge the image container */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhance the shadow on hover */
+}
+
+.project-image:hover img {
+    transform: scale(1.1); /* Slightly enlarge the image itself */
+}

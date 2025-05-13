@@ -1,52 +1,53 @@
-
-
 .home-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-     /* Ensures the container takes up full viewport height */
-    border-radius: 20px;
-    animation: gradientBack 20s infinite;
-    
-
+    max-height: 100%; /* Full viewport height */
+    width: 100%; /* Full width */
+    border-radius: 0; /* Remove rounded edges */
+    animation: gradientBack 20s infinite; /* Background animation */
 }
+
 @keyframes gradientBack {
     0%{background-color: palegoldenrod;}
     50%{background-color: lightgray;}
     100%{background-color: palegoldenrod;}
 }
-@keyframes slideIn{
-    from {transform:translateX(-100%); opacity: 0;}
-    to {transform:translateX(0%); opacity: 1;}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0%); opacity: 1; }
 }
 
-@keyframes slideInfaster{
-    from {transform:translateX(-100%); opacity: 0;}
-    to {transform:translateX(0%); opacity: 1;}
+@keyframes slideInfaster {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0%); opacity: 1; }
 }
 
 @keyframes slideUp {
     from { transform: translateY(100%); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-@keyframes goUp{
-    from {transform: translateY(100%); opacity: 0;}
-    to {transform: translateY(0%); opacity: 1;}
+@keyframes goUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0%); opacity: 1; }
 }
-.home-container2{
+
+.home-container2 {
     display: flex;
     flex-direction: row;
-    min-height: 50vh;
+    min-height: 40vh;
     align-items: center;
 }
-.home-container2-1{
+
+.home-container2-1 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,42 +55,45 @@
     width: 50%;
     animation: slideInfaster 3s ease-out backwards;
 }
-.home-container2-2{
+
+.home-container2-2 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 50%;
     animation: slideUp 3s ease-out backwards;
-    
 }
-#homePageText{
+
+#homePageText {
     font-size: 9vh;
     animation: slideIn 5s ease-out forwards;
     color: black;
 }
-#webDevText{
+
+#webDevText {
     font-size: 4vh;
     font-size: 3vw;
     padding: 20px;
     color: black;
 }
-.wordMain{
-    display: inline-block;
-    transition:transform 0.3s ease;
 
-}
-.wordMain:hover{
-    transform:scale(1.4)
-}
-
-.word{
+.wordMain {
     display: inline-block;
     transition: transform 0.3s ease;
 }
 
-.word:hover{
-    transform:scale(1.3)
+.wordMain:hover {
+    transform: scale(1.4);
+}
+
+.word {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.word:hover {
+    transform: scale(1.3);
 }
 
 .flip-card {
@@ -97,9 +101,8 @@
     width: 25vw;
     height: 25vw;
     perspective: 1000px;
-    
-
 }
+
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -109,12 +112,10 @@
     transform-style: preserve-3d;
     border-radius: 20px;
 }
+
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
-    
 }
-
-
 
 .flip-card-front, .flip-card-back {
     position: absolute;
@@ -122,7 +123,6 @@
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
-
     border-radius: 20px;
 }
 
@@ -142,24 +142,29 @@
     justify-content: center;
     border-radius: 20px;
 }
-.flip-card-back p{
-    transition:transform 0.3s ease;
+
+.flip-card-back p {
+    transition: transform 0.3s ease;
     font-weight: bold;
 }
-.flip-card-back p:hover{
+
+.flip-card-back p:hover {
     transform: scale(1.4);
 }
+
 .flip-card-back ul {
     list-style-type: none;
     padding: 0;
 }
-.flip-card-back li  {
-    transition: transform 0.3s ease;
 
+.flip-card-back li {
+    transition: transform 0.3s ease;
 }
+
 .flip-card-back li:hover {
     transform: scale(1.4);
 }
+
 .flip-card-front a {
     display: block;
     width: 100%;
@@ -167,6 +172,7 @@
     border-radius: 15px; /* Make the anchor tag container rounded */
     overflow: hidden; /* Ensure the image is clipped within the rounded container */
 }
+
 .flip-card-front img {
     width: 100%;
     height: 100%;
@@ -185,7 +191,6 @@ button {
     margin-bottom: 50px;
     width: 25vw;
     height: auto;
-
 }
 
 button:hover {
@@ -193,10 +198,12 @@ button:hover {
     color: white;
     transform: scale(1.05);
 }
-#replacement-text{
+
+#replacement-text {
     opacity: 0;
     animation: fadeIn 3s ease-out 3s forwards;
 }
+
 input[type="email"] {
     font: size 2vh;
     padding: 10px;
@@ -206,7 +213,8 @@ input[type="email"] {
     width: 40%;
     box-sizing: border-box;
 }
-.home-container3{
+
+.home-container3 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -214,4 +222,11 @@ input[type="email"] {
     min-height: 25vh;
     width: 100%;
     animation: fadeIn 6s ease-in backwards;
+}
+
+#main {
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    margin: 0;
+    padding: 0;
 }
