@@ -26,14 +26,19 @@
 
 /* Project Box */
 .project-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
     background-color: white; /* White background for the box */
     border: 2px solid silver; /* Silver outline */
     border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Inner padding for content */
+    padding: 10px; /* Inner padding for content */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     min-height: 40vh;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
     width: 35vw;
+;
 }
 
 /* Hover Effect */
@@ -44,14 +49,15 @@
 
 /* Project Image */
 .project-image {
-    position: relative; /* Ensure the image stays within its container */
-    overflow: hidden; /* Prevent the enlarged image from overflowing */
-    border: 2px solid white; /* Add a white border around the image */
-    border-radius: 10px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-    width: 40%; /* Set the width to 70% of the parent box */
-    margin: 0 auto; /* Center the image horizontally */
+    position: relative;
+    overflow: hidden;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 70%; /* Adjust width as needed */
+    
+
     
 }
 
@@ -72,3 +78,12 @@
 .project-image:hover img {
     transform: scale(1.1); /* Slightly enlarge the image itself */
 }
+
+/* Project Content */
+.project-content {
+    text-align: center; /* Keep text centered */
+    margin-top: 0; /* Remove unnecessary top margin */
+    padding: 5px; /* Remove unnecessary padding */
+    height: auto; /* Set a fixed height for the content area */
+}
+

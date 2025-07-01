@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 
 html, body {
@@ -59,28 +59,28 @@ section {
   text-align: left;
 }
 h1{
-  font-family: "Oswald", sans-serif;
+  font-family: "opensans", sans-serif;
   font-size: 2.0vw;
   color: black;
 }
 h2{
-  font-family: "Oswald", sans-serif;
+  font-family: "opensans", sans-serif;
   font-size:1.5vw;
-  padding: 15px;
+  padding: 10px;
   color: white;
   
 }
 
 h3{
-  font-family: "Oswald", sans-serif;
-  font-size:3vw;
-  padding: 10px;
-  color: white;
+  font-family: "opensans", sans-serif;
+  font-size:1vh;
+  padding: none;
+  color: black;
 
   
 }
 h4{
-  font-family: "Oswald", sans-serif;
+  font-family: "opensans", sans-serif;
   font-size:2vw;
   padding: 15px;
   color: white;
@@ -89,24 +89,24 @@ h4{
 
 
 p {
-  font-family: "Oswald", sans-serif;
+  font-family: "opensans", sans-serif;
   color: black;
   font-size: 1.5vw;
-  padding: 6px;
+  padding:  4px;
 }
 p1{
-  font-family: "Oswald", sans-serif;
+  font-family: "opensans", sans-serif;
   color: white;
   font-size: 2.0vw;
   padding: 6px;
 }
 li{
-  font-family: "Oswald", sans-serif;
+  font-family: "opensans", sans-serif;
   font-size: 1.2vw;
   padding: 3px;
 }
 a{
-  font-family: "Oswald", sans-serif;
+  font-family: "opensans", sans-serif;
   font-size: 1.5vw;
   
 }

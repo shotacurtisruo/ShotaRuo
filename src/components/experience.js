@@ -62,7 +62,45 @@ export const Experience = () => {
 
                         {/* Right Section: Company Logo */}
                         <div className="company-logo">
-                            <img src="/images/ksc.png" alt="DevStudio-logo" />
+                            <img src="/images/KSC.png" alt="DevStudio-logo" />
+                        </div>
+                    </div>
+                </div>
+            </Slide>
+
+            {/* Bento Box Section 4 */}
+            <Slide direction="right" duration={3700}>
+                <div className="bento-box">
+                    <div className="inner-box">
+                        {/* Left Section: Job Position */}
+                        <div className="job-details">
+                            <h1>Student Helper @ CPE IT</h1>
+                            <p>Duration: May 2025 - Present</p>
+                            <p>Responsibilities: staffing the help desk, providing tier 1 computer support, moving computers, performing computer updates, and finding solutions to novel problems</p>
+                        </div>
+
+                        {/* Right Section: Company Logo */}
+                        <div className="company-logo">
+                            <img src="/images/ucdavis.png" alt="TechCorp-logo" />
+                        </div>
+                    </div>
+                </div>
+            </Slide>
+
+            {/* Bento Box Section 5 */}
+            <Slide direction="left" duration={3700}>
+                <div className="bento-box">
+                    <div className="inner-box">
+                        {/* Left Section: Job Position */}
+                        <div className="job-details">
+                            <h1>Fullstack Developer @ Buzzit</h1>
+                            <p>Duration: May 2025 - Present</p>
+                            <p>Responsibilities: Creating an app using React Native!</p>
+                        </div>
+
+                        {/* Right Section: Company Logo */}
+                        <div className="company-logo">
+                            <img src="/images/buzzit.jpeg" alt="buzzit-logo" />
                         </div>
                     </div>
                 </div>

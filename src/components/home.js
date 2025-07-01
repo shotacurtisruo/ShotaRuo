@@ -64,9 +64,9 @@ export const Home = () => {
                                 <p id='hobbies'>About Me:</p>
                                     <ul>
                                         <li>I am a third year studying CS @ UC Davis</li>
-                                        <li>I have fun creating webpages for non-profits and others.</li>
-                                        <li>I am very fond with working with teams and communicating</li>
-                                        <li>Some of my other hobbies are Basketball and Chess</li>
+                                        <li>On my free time, I like to play basketball or learn new technologies</li>
+                                        <li>Please feel free to connect with me on my socials! They are all at the bottom</li>
+                                       
                                     </ul>
                                 
 

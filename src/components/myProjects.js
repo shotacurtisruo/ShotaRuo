@@ -15,7 +15,7 @@ export const MyProjects = () => {
                             <img src="/images/icon.png" alt="Web Chrome Extension" />
                         </div>
                         <div className="project-content">
-                            <h3>Web Chrome Extension</h3>
+                    
                             <p>
                                 Chrome extension that allows users to save and store links or tabs directly on their computer, providing a convenient way to manage and access their browsing sessions.
                             </p>
@@ -31,7 +31,7 @@ export const MyProjects = () => {
                             <img src="/images/KSC.png" alt="KSC" />
                         </div>
                         <div className="project-content">
-                            <h3>KSC temp Website</h3>
+                            
                             <p>
                                 Website I built for Kefli Sports Club (KSC) to provide information about the club, its activities, and events in the early stages.
                             </p>
