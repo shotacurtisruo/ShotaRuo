@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import * as THREE from 'three'; // Import Three.js (required by Vanta.js)
+import BIRDS from 'vanta/dist/vanta.birds.min'; // Import Vanta Birds effect
 import '../App.css';
-import '../styles/home.css'
+import '../styles/home.css';
 import axios from 'axios';
 
+// Ensure THREE is globally available for Vanta.js
+if (!window.THREE) {
+    window.THREE = THREE;
+}
+
 export const Home = () => {
+    const [email, setEmail] = useState('');
+    const [submitted, setSubmitted] = useState(false);
+
+   
     const text = "Hello. I am a Software Developer.";
     const wrappedText = text.split(' ').map((word, index) => (
         <span key={index} className="word">
             {word}&nbsp;
-            
         </span>
-   
     ));
 
     const mainText = "I am Shota Ruo";
@@ -20,89 +29,39 @@ export const Home = () => {
         </span>
     ));
 
-    const [email, setEmail] = useState('');
-    const [submitted, setSubmitted] = useState(false);
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try{
-            const response = await axios.post('http://localhost:5001/api/submit-email', { email });
-            if(response.status === 200) {
-                alert('Email submitted successfully');  
-                setSubmitted(true);
-            }
-        } catch (error) {
-            console.error('error submitting email', error);
-            alert('Failed to submit email');
-        }
-       
-       
-    };
-       
-            
-
-
-
-
+ 
 
     return (
         <div className="home-container">
-            <h2 id='homePageText'>{mainWrappedText}</h2>
-            <div className='home-container2'>
-                <div className='home-container2-1'>
-                    <p id='webDevText'>{wrappedText}</p>
+            <h2 id="homePageText">{mainWrappedText}</h2>
+            <div className="home-container2">
+                <div className="home-container2-1">
+                    <p id="webDevText">{wrappedText}</p>
                 </div>
-                <div className='home-container2-2'>
-                    <div className='flip-card'>
-                        <div className='flip-card-inner'>
-                            <div className='flip-card-front'>
-                                <img src="images/ShotaRuoMAIN.JPG" width={300} height={300} id='self-portrait' alt="self portrait"></img>
+                <div className="home-container2-2">
+                    <div className="flip-card">
+                        <div className="flip-card-inner">
+                            <div className="flip-card-front">
+                                <img
+                                    src="images/ShotaRuoMAIN.JPG"
+                                    width={300}
+                                    height={300}
+                                    id="self-portrait"
+                                    alt="self portrait"
+                                ></img>
                             </div>
-
-                            <div className='flip-card-back'>
-
-                                <p id='hobbies'>About Me:</p>
-                                    <ul>
-                                        <li>I am a third year studying CS @ UC Davis</li>
-                                        <li>On my free time, I like to play basketball or learn new technologies</li>
-                                        <li>Please feel free to connect with me on my socials! They are all at the bottom</li>
-                                       
-                                    </ul>
-                                
-
+                            <div className="flip-card-back">
+                                <p id="hobbies">About Me:</p>
+                                <ul>
+                                    <li>I am a third year studying CS @ UC Davis</li>
+                                    <li>On my free time, I like to play basketball or learn new technologies</li>
+                                    <li>Please feel free to connect with me on my socials! They are all at the bottom</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-           {/* <div className='home-container3'>
-                <h3>Contact Me</h3>
-                {!submitted ? (
-                    <form onSubmit={handleSubmit}>
-                        <input
-                            type="email"
-                            id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                        <button type="submit">Submit</button>
-                    </form>
-                ) : (
-                    <p>Thank you for submitting your email!</p> 
-                )}
-            </div>
-            */}
-            
         </div>
-
-
-
-
-
     );
 };
-//create button for toggling light and dark mode 
-//create a login page with forgot password button and alert the email
-
-//create a form wil users can drop their email if they are interested in sending me emails or 

@@ -1,3 +1,5 @@
+
+
 .home-container {
     display: flex;
     flex-direction: column;
@@ -6,6 +8,7 @@
     max-height: 100%; /* Full viewport height */
     width: 100%; /* Full width */
     border-radius: 0; /* Remove rounded edges */
+    color: black;
     animation: gradientBack 20s infinite; /* Background animation */
 }
 

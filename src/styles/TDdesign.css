@@ -1,0 +1,11 @@
+.td-design-container {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    position: relative; /* Ensure child elements are positioned correctly */
+    overflow: hidden; /* Prevent scrolling issues */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Text color to contrast with the background */
+}
