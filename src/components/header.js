@@ -7,7 +7,14 @@ export const Header = () => {
     <header className="header-custom">
       <div className="header-left">
         <div className="photo-frame">
-          <img src="/images/ShotaRuoMAIN.JPG" alt="Shota Ruo" className="header-photo" />
+          <a
+            href="https://www.linkedin.com/in/shotaruo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Shota Ruo LinkedIn"
+          >
+            <img src="/images/ShotaRuoMAIN.JPG" alt="Shota Ruo" className="header-photo" />
+          </a>
         </div>
       </div>
       <nav className="header-right">

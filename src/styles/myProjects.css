@@ -6,11 +6,16 @@
     color: white; /* Default text color for contrast */
 }
 
+/* Projects Heading */
 .projects-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
     text-align: center;
-    font-size: 2rem;
-    color: white; /* White text for the heading */
-    margin-bottom: 20px;
 }
 
 /* Projects Container */
@@ -47,43 +52,119 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
+/* Projects Card Container */
+.projects-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Project Card */
+.project-card {
+    background: rgba(30, 30, 30, 0.96);
+    border-radius: 22px;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.28), 0 0 32px 8px #fff3;
+    padding: 2.2rem 1.7rem 2rem 1.7rem;
+    max-width: 350px;
+    min-width: 270px;
+    min-height: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    border: 1.5px solid #fff2;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    box-shadow: 0 0 40px 12px #fff, 0 8px 32px 0 rgba(0,0,0,0.28);
+    transform: translateY(-10px) scale(1.045);
+    border-color: #fff;
+}
+
 /* Project Image */
 .project-image {
     position: relative;
-    overflow: hidden;
-    border: 2px solid white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 70%; /* Adjust width as needed */
-    
-
-    
+    overflow: visible;
+    border: none;              /* Remove the white border/frame */
+    border-radius: 0;          /* Remove rounded corners from the frame */
+    box-shadow: none;          /* Remove frame shadow */
+    transition: transform 0.3s ease;
+    width: auto;               /* Let the image size itself */
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Image inside the Project Image */
 .project-image img {
-    width: 100%; /* Ensure the image fills the container's width */
-    height: 100%; /* Ensure the image fills the container's height */
-    object-fit: cover; /* Scale the image to cover the container while maintaining aspect ratio */
-    transition: transform 0.3s ease; /* Smooth scaling effect */
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 18px rgba(255,255,255,0.12);
+    background: #fff;
+    transition: transform 0.3s;
 }
 
-/* Hover Effect */
 .project-image:hover {
-    transform: scale(1.05); /* Slightly enlarge the image container */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhance the shadow on hover */
+    transform: scale(1.05);
+    box-shadow: none; /* No frame shadow on hover */
 }
 
 .project-image:hover img {
-    transform: scale(1.1); /* Slightly enlarge the image itself */
+    transform: scale(1.12);
 }
 
 /* Project Content */
 .project-content {
-    text-align: center; /* Keep text centered */
-    margin-top: 0; /* Remove unnecessary top margin */
-    padding: 5px; /* Remove unnecessary padding */
-    height: auto; /* Set a fixed height for the content area */
+    text-align: center;
+    margin-top: 0;
+    padding: 5px;
+    height: auto;
+    width: 100%;
+}
+
+.project-content h2 {
+    font-size: 1.35rem;
+    margin-bottom: 0.7rem;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.project-content p {
+    font-size: 1.05rem;
+    color: #e0e0e0;
+    margin-bottom: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+}
+
+.project-content a {
+    color: #fff;
+    background: linear-gradient(90deg, #00fff7 0%, #007c91 100%);
+    padding: 0.5rem 1.2rem;
+    border-radius: 18px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,255,247,0.12);
+    display: inline-block;
+}
+
+.project-content a:hover {
+    background: linear-gradient(90deg, #fff 0%, #00fff7 100%);
+    color: #222;
+    box-shadow: 0 0 16px #00fff7;
 }
 

@@ -11,6 +11,24 @@ export const Experience = () => {
                 <h1>Experience</h1>
             </div>
 
+            {/* Bento Box: Software Engineering Intern @ Narb */}
+            <Slide direction="right" duration={3700}>
+                <div className="bento-box">
+                    <div className="inner-box">
+                        {/* Left Section: Job Position */}
+                        <div className="job-details">
+                            <h1>Software Engineering Intern @ Narb</h1>
+                            <p>Duration: June 2025 - Present</p>
+                            <p>Responsibilities: Working on new upcoming tech products</p>
+                        </div>
+                        {/* Right Section: Company Logo */}
+                        <div className="company-logo">
+                            <img src="/images/narb-logo.jpg" alt="Narb logo" />
+                        </div>
+                    </div>
+                </div>
+            </Slide>
+
             {/* Bento Box Section 1 */}
             <Slide direction="left" duration={3700}>
                 <div className="bento-box">

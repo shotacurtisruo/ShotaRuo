@@ -1,6 +1,6 @@
 .experience-header {
     text-align: center;
-    margin-bottom: 20px; /* Add spacing below the header */
+    margin: 40px; /* Add spacing below the header */
     animation: fadeIn 2s ease-in-out; /* Apply fade-in animation */
 }
 
@@ -160,7 +160,7 @@
     font-size: 1.5rem; /* Adjust the font size */
     font-weight: bold; /* Make the text bold */
     color: #ffffff; /* White text color */
-    margin-bottom: -50px; /* Reduce spacing below the heading */
+    margin-bottom: -30px; /* Reduce spacing below the heading */
     font-family: "Nunito Sans", sans-serif; /* Match the font style */
 }
 
