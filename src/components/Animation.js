@@ -1,13 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import '../utils/global-three'; // sets window.THREE
 import GLOBE from 'vanta/dist/vanta.globe.min';
-import * as THREE from 'three';
+import React, { useEffect, useRef } from 'react';
 import '../styles/Animation.css';
 
 export const Animation = () => {
   const vantaRef = useRef(null);
 
   useEffect(() => {
-    if (!window.THREE) window.THREE = THREE;
+    console.log("Vanta mount");
+    if (!vantaRef.current) return;
     let vantaEffect = GLOBE({
       el: vantaRef.current,
       mouseControls: true,
@@ -22,6 +23,7 @@ export const Animation = () => {
       backgroundColor: 0x0f0f0f
     });
     return () => {
+      console.log("Vanta unmount");
       if (vantaEffect) vantaEffect.destroy();
     };
   }, []);
