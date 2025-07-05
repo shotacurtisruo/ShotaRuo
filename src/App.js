@@ -22,9 +22,7 @@ function App() {
         <section id="myprojects">
           <MyProjects />
         </section>
-        <section id="practice">
-          <TDdesign />
-        </section>
+        
       </main>
       <Footer />
     </div>
