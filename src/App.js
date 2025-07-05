@@ -2,7 +2,6 @@ import './App.css';
 
 import * as THREE from 'three';
 
-import { Home } from './components/home';
 import { Experience } from './components/experience';
 import { Header } from './components/header';
 import { MyProjects } from './components/myProjects';
@@ -18,18 +17,14 @@ function App() {
     <div className="App">
       <Header />
       <main className="main-content">
-       
-        <section id="home">
-          <Home />
+        <section id="animation">
+          <Animation />
         </section>
         <section id="experience">
           <Experience />
         </section>
         <section id="myprojects">
           <MyProjects />
-        </section>
-        <section id="animation">
-          <Animation />
         </section>
       </main>
       <Footer />

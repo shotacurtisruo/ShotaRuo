@@ -28,8 +28,10 @@ export const Animation = () => {
 
   return (
     <div className="animation-container" ref={vantaRef}>
-      <h1>Globe Animation Section</h1>
-      <p>Enjoy the Vanta Globe effect!</p>
+      <div className="animation-intro-box">
+        <h1>Hi, I'm Shota</h1>
+        <p>A Software Engineer.</p>
+      </div>
     </div>
   );
 };

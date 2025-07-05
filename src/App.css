@@ -13,19 +13,16 @@ html {
   scroll-behavior: smooth;
 }
 section {
-  padding: 50px 20px;
+  
   min-height: 100vh;
   
 }
-@keyframes gradientBack {
-  0%{background-color: palegoldenrod;}
-  50%{background-color: lightgray;}
-  100%{background-color: palegoldenrod;}
-}
+
 #root {
   height: 100%;
-  animation: gradientBack 20s infinite;
+  background-color: black;
 }
+
 .App {
   flex: 1;
 

@@ -1,41 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-header{
-
+header {
     display: flex;
     padding: 0 5rem; 
     align-items: center;
     justify-content: space-between;
     min-height: 15vh;
     height: auto;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     font-family: "Nunito Sans", sans-serif;
     font-size: larger;
     border-radius: 0px 0px 10px 10px;
-    
 }
-header :hover{
+
+header :hover {
     transform: scale(1.12);
 }
 
-
-nav a{
-    color: white;
+nav a {
+    color: black;
     margin-right: 10px; 
 }
 
 nav a:hover { 
-    color:aqua
-
+    color: aqua;
 }
-.header-title{
-    font-family: "Nunito Sans", sans-serif;
+
+.header-title {
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+.header-custom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: black;
     color: white;
-   
+    padding: 0 2rem;
+    height: 90px;
+    position: relative;
+    z-index: 10;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.photo-frame {
+    width: 60px;
+    height: 60px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.header-photo {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.header-search {
+    width: 260px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-dropdown {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    color: #222;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    z-index: 100;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.dropdown-item {
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+    background: #f0f0f0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header-right a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header-right a:hover {
+    color: #00fff7;
 }
