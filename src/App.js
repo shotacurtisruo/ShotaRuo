@@ -1,18 +1,24 @@
 import './App.css';
-import './globalSetup'; // Import global setup for THREE.js
+
+import * as THREE from 'three';
 
 import { Home } from './components/home';
 import { Experience } from './components/experience';
 import { Header } from './components/header';
 import { MyProjects } from './components/myProjects';
+import { Animation } from './components/Animation';
 import { Footer } from './components/footer';
-import { TDdesign } from './components/TDdesign';
+
+if (!window.THREE) {
+    window.THREE = THREE;
+}
 
 function App() {
   return (
     <div className="App">
       <Header />
       <main className="main-content">
+       
         <section id="home">
           <Home />
         </section>
@@ -22,7 +28,9 @@ function App() {
         <section id="myprojects">
           <MyProjects />
         </section>
-        
+        <section id="animation">
+          <Animation />
+        </section>
       </main>
       <Footer />
     </div>
