@@ -23,7 +23,7 @@ export const Experience = () => {
                         </div>
                         {/* Right Section: Company Logo */}
                         <div className="company-logo">
-                            <img src="/images/narb-logo.jpg" alt="Narb logo" />
+                            <img src="/images/narblogo.png" alt="Narb logo" />
                         </div>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ export const Header = () => {
             rel="noopener noreferrer"
             aria-label="Shota Ruo LinkedIn"
           >
-            <img src="/images/ShotaRuoMAIN.JPG" alt="Shota Ruo" className="header-photo" />
+            <img src="/images/SHOTA.jpg" alt="Shota Ruo" className="header-photo" />
           </a>
         </div>
       </div>
