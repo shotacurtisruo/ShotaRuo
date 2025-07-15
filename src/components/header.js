@@ -8,7 +8,7 @@ export const Header = () => {
       <div className="header-left">
         <div className="photo-frame">
           <a
-            href="https://www.linkedin.com/in/shotaruo/"
+            href="https://www.linkedin.com/in/shota-ruo-1869b7244"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Shota Ruo LinkedIn"
