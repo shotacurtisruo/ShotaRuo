@@ -11,14 +11,50 @@ export const Experience = () => {
                 <h1>Experience</h1>
             </div>
 
-            {/* Bento Box: Software Engineering Intern @ Narb */}
+            {/* Bento Box: Project Lead @ Narb */}
+            <Slide direction="left" duration={3700}>
+                <div className="bento-box">
+                    <div className="inner-box">
+                        {/* Left Section: Job Position */}
+                        <div className="job-details">
+                            <h1>Project Lead @ Narb</h1>
+                            <p>Duration: August 2025 - Present</p>
+                            <p>Responsibilities: Responsible for overseeing the planning, execution, and continuous improvement of the company website</p>
+                        </div>
+                        {/* Right Section: Company Logo */}
+                        <div className="company-logo">
+                            <img src="/images/narblogo.png" alt="Narb logo" />
+                        </div>
+                    </div>
+                </div>
+            </Slide>
+
+            {/* Bento Box: Front-end developer intern @ Pal AI */}
+            <Slide direction="right" duration={3700}>
+                <div className="bento-box">
+                    <div className="inner-box">
+                        {/* Left Section: Job Position */}
+                        <div className="job-details">
+                            <h1>Front-end developer intern @ Pal AI</h1>
+                            <p>Duration: August 2025 - Present</p>
+                            <p>Responsibilities: Working on a startup webapp</p>
+                        </div>
+                        {/* Right Section: Company Logo */}
+                        <div className="company-logo">
+                            <img src="/images/PalAI.jpeg" alt="Pal AI logo" />
+                        </div>
+                    </div>
+                </div>
+            </Slide>
+
+            {/* Bento Box: Software Engineering Intern @ Narb (Updated) */}
             <Slide direction="right" duration={3700}>
                 <div className="bento-box">
                     <div className="inner-box">
                         {/* Left Section: Job Position */}
                         <div className="job-details">
                             <h1>Software Engineering Intern @ Narb</h1>
-                            <p>Duration: June 2025 - Present</p>
+                            <p>Duration: June 2025 - August 2025</p>
                             <p>Responsibilities: Working on new upcoming tech products</p>
                         </div>
                         {/* Right Section: Company Logo */}
