@@ -1,12 +1,20 @@
+/* ============================================
+   EXPERIENCE COMPONENT
+   ============================================
+   Displays work experience in bento-box style cards
+   - Each job shows: title, duration, responsibilities, company logo
+   - Animated tech stack marquee at the bottom
+   ============================================ */
+
 import '../styles/experience.css';
 import React from 'react';
-import Marquee from 'react-fast-marquee'; // Import the library
-import { Slide, Fade } from 'react-awesome-reveal'; // Import the Fade animation
+import Marquee from 'react-fast-marquee';
+import { Slide, Fade } from 'react-awesome-reveal';
 
 export const Experience = () => {
     return (
         <div id="main">
-            {/* Header Section */}
+            {/* Section Header */}
             <div className="experience-header">
                 <h1>Experience</h1>
             </div>
@@ -36,7 +44,7 @@ export const Experience = () => {
                         {/* Left Section: Job Position */}
                         <div className="job-details">
                             <h1>Front-end developer intern @ Pal AI</h1>
-                            <p>Duration: August 2025 - Present</p>
+                            <p>Duration: June 2025 - August 2025</p>
                             <p>Responsibilities: Working on a startup webapp</p>
                         </div>
                         {/* Right Section: Company Logo */}
@@ -160,14 +168,14 @@ export const Experience = () => {
                 </div>
             </Slide>
 
-            {/* Horizontal Reel Section */}
-            <Fade duration={2000}> {/* Add fade-in animation */}
+            {/* Tech Stack Section - Animated Scrolling Icons */}
+            <Fade duration={2000}>
                 <h2 className="tech-stack-heading">My Tech Stack</h2>
                 <div className="tech-stack-container">
                     <div className="tech-stack-reel">
                         <Marquee gradient={false} speed={70} loop={0}>
                             <div className="tech-stack">
-                                {/* First set of icons */}
+                                {/* Tech Stack Icons - Duplicated for seamless loop */}
                                 <img src="/images/html5.svg" alt="HTML" />
                                 <img src="/images/css.svg" alt="CSS" />
                                 <img src="/images/javascript.svg" alt="JavaScript" />
@@ -177,9 +185,9 @@ export const Experience = () => {
                                 <img src="/images/cplusplus.svg" alt="C++" />
                                 <img src="/images/react.svg" alt="ReactJS" />
                                 <img src="/images/supabase.svg" alt="Supabase" />
-                                <img src="/images/expo.svg" alt="ExpressJS" />
+                                <img src="/images/expo.svg" alt="Expo" />
 
-                                {/* Second set of icons */}
+                                {/* Duplicate set for seamless infinite scroll */}
                                 <img src="/images/html5.svg" alt="HTML" />
                                 <img src="/images/css.svg" alt="CSS" />
                                 <img src="/images/javascript.svg" alt="JavaScript" />
@@ -189,9 +197,8 @@ export const Experience = () => {
                                 <img src="/images/cplusplus.svg" alt="C++" />
                                 <img src="/images/react.svg" alt="ReactJS" />
                                 <img src="/images/supabase.svg" alt="Supabase" />
-                                <img src="/images/expo.svg" alt="ExpressJS" />
+                                <img src="/images/expo.svg" alt="Expo" />
 
-                                {/* Spacer */}
                                 <div className="spacer"></div>
                             </div>
                         </Marquee>

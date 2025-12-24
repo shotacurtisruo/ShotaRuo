@@ -1,22 +1,28 @@
+/* ============================================
+   FOOTER COMPONENT
+   ============================================
+   Footer with:
+   - Attribution text
+   - Social media links (GitHub, LinkedIn, Instagram)
+   ============================================ */
+
 import React from 'react';
-import { animateScroll as scroll } from 'react-scroll'; // Import the scroll function
-import '../styles/footer.css'; // Import the footer styles
+import '../styles/footer.css';
 
 export const Footer = () => {
-    const scrollToTop = () => {
-        scroll.scrollToTop({ duration: 800, smooth: 'easeInOutQuad' }); // Smooth scroll to the top
-    };
-
     return (
         <footer className="footer">
-            <hr className="footer-line" /> {/* Horizontal line */}
+            {/* Divider Line */}
+            <hr className="footer-line" />
+            
+            {/* Footer Content Container */}
             <div className="footer-content">
-                {/* Left Section */}
+                {/* Left Section: Attribution */}
                 <div className="footer-left">
                     <p1 className="footer-text">Built by Shota</p1>
                 </div>
 
-                {/* Right Section */}
+                {/* Right Section: Social Media Links */}
                 <div className="footer-right">
                     <div className="social-container">
                         <div className="social-icons">
@@ -33,9 +39,6 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-
-            {/* Scroll-to-Top Button */}
-            
         </footer>
     );
 };

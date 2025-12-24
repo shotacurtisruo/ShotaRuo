@@ -1,3 +1,11 @@
+/* ============================================
+   HEADER COMPONENT
+   ============================================
+   Navigation bar with:
+   - Profile photo (links to LinkedIn)
+   - Navigation menu (smooth scroll to sections)
+   ============================================ */
+
 import React from 'react';
 import '../App.css';
 import '../styles/header.css';
@@ -5,6 +13,7 @@ import '../styles/header.css';
 export const Header = () => {
   return (
     <header className="header-custom">
+      {/* Left Section: Profile Photo */}
       <div className="header-left">
         <div className="photo-frame">
           <a
@@ -17,8 +26,10 @@ export const Header = () => {
           </a>
         </div>
       </div>
+      
+      {/* Right Section: Navigation Menu */}
       <nav className="header-right">
-        <a href="#home">Home</a>
+        <a href="#animation">Home</a>
         <a href="#experience">Experience</a>
         <a href="#myprojects">My Projects</a>
       </nav>

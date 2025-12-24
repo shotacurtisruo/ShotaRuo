@@ -1,16 +1,28 @@
+/* ============================================
+   MY PROJECTS COMPONENT
+   ============================================
+   Portfolio projects showcase with:
+   - 3D tilt effect on hover (react-parallax-tilt)
+   - Fade-in animations (react-awesome-reveal)
+   - Scroll-to-top button
+   ============================================ */
+
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
-import Tilt from 'react-parallax-tilt'; // npm install react-parallax-tilt
+import Tilt from 'react-parallax-tilt';
 import ScrollToTop from "react-scroll-to-top";
-import { FaArrowUp } from "react-icons/fa"; // npm install react-icons
+import { FaArrowUp } from "react-icons/fa";
 import '../styles/myProjects.css';
 
 export const MyProjects = () => {
     return (
         <div id="main">
+            {/* Section Header */}
             <h1 className="projects-heading">My Projects:</h1>
+            
+            {/* Projects Grid Container */}
             <div className="projects-card-container">
-                {/* Project 1 */}
+                {/* Project 1: Chrome Extension */}
                 <Fade duration={2000}>
                     <Tilt glareEnable={true} glareMaxOpacity={0.25} scale={1.05} transitionSpeed={250}>
                         <div className="project-card">
@@ -29,26 +41,29 @@ export const MyProjects = () => {
                         </div>
                     </Tilt>
                 </Fade>
-                {/* Project 2 */}
+                
+                {/* Project 2: Sho AI Chatbot */}
                 <Fade duration={2000}>
                     <Tilt glareEnable={true} glareMaxOpacity={0.25} scale={1.05} transitionSpeed={250}>
                         <div className="project-card">
                             <div className="project-image">
-                                <img src="/images/KSC.png" alt="KSC" />
+                                <img src="/images/SHOTA.jpg" alt="Sho AI Chatbot" />
                             </div>
                             <div className="project-content">
-                                <h2>Kefli Sports Club Website</h2>
+                                <h2>Sho AI - Personal Chatbot</h2>
                                 <p>
-                                    Website I built for Kefli Sports Club (KSC) to provide information about the club, its activities, and events in the early stages.
+                                    An AI-powered chatbot that represents me, built to answer questions about my background, experience, and projects. It's like having a conversation with me! Password: elsie
                                 </p>
-                                <a href="https://kefli-sports-club.web.app/" target="_blank" rel="noopener noreferrer">
-                                    KSC Webpage
+                                <a href="https://sho-ai.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                    Try Sho AI Chatbot
                                 </a>
                             </div>
                         </div>
                     </Tilt>
                 </Fade>
             </div>
+            
+            {/* Scroll-to-Top Button */}
             <ScrollToTop
                 smooth
                 component={
