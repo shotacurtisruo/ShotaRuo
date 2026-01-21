@@ -6,12 +6,12 @@
    - Displays introduction text overlay
    ============================================ */
 
-import '../utils/global-three'; // Sets window.THREE for Vanta.js
+import '../../../utils/global-three'; // Sets window.THREE for Vanta.js
 import GLOBE from 'vanta/dist/vanta.globe.min';
 import React, { useEffect, useRef } from 'react';
-import '../styles/Animation.css';
+import './HeroSection.css';
 
-export const Animation = () => {
+export const HeroSection = () => {
   // Ref for the DOM element that will contain the Vanta.js animation
   const vantaRef = useRef(null);
 
