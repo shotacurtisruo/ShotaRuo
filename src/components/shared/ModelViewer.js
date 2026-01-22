@@ -21,15 +21,19 @@ export const ModelViewer = ({
   autoRotate = true,
   enableZoom = true,
   enablePan = false,
+  enableRotate = true,
   cameraPosition = [0, 0, 5],
   modelScale = 0.5
 }) => {
+  const isFooterModel = className.includes('footer-3d-model');
+  
   return (
     <div className={`model-viewer-container ${className}`}>
       <Canvas
         className="model-viewer-canvas"
-        camera={{ position: cameraPosition, fov: 50 }}
+        camera={{ position: cameraPosition, fov: isFooterModel ? 60 : 50 }}
         gl={{ antialias: true, alpha: true }}
+        style={isFooterModel ? { width: '100%', height: '100%', display: 'block' } : {}}
       >
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
@@ -41,8 +45,9 @@ export const ModelViewer = ({
             autoRotateSpeed={1}
             enableZoom={enableZoom}
             enablePan={enablePan}
-            minDistance={3}
-            maxDistance={10}
+            enableRotate={enableRotate}
+            minDistance={isFooterModel ? 2 : 3}
+            maxDistance={isFooterModel ? 5 : 10}
           />
           <Environment preset="city" />
         </Suspense>

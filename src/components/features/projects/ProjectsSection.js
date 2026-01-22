@@ -1,95 +1,140 @@
 /* ============================================
-   MY PROJECTS COMPONENT
+   PROJECTS COMPONENT
    ============================================
-   Portfolio projects showcase with:
-   - 3D tilt effect on hover (react-parallax-tilt)
-   - Fade-in animations (react-awesome-reveal)
-   - Scroll-to-top button
+   Using ReactBits card-swap component
+   - Cards that automatically cycle through
+   - GSAP animations for smooth transitions
    ============================================ */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Fade } from 'react-awesome-reveal';
-import Tilt from 'react-parallax-tilt';
-import ScrollToTop from "react-scroll-to-top";
-import { FaArrowUp } from "react-icons/fa";
+import CardSwap, { Card } from '../../shared/CardSwap';
 import './ProjectsSection.css';
 
+const projectsData = [
+  {
+    title: 'Chrome Extension',
+    description: 'Save and manage browser tabs directly on your computer.',
+    image: '/images/icon.png',
+    link: 'https://github.com/shotacurtisruo/chrome-web-browser-version-1.1',
+    linkText: 'View on GitHub'
+  },
+  {
+    title: 'Sho AI',
+    description: 'AI chatbot that answers questions about my background and experience.',
+    image: '/images/SHOTA.jpg',
+    link: 'https://sho-ai.vercel.app/',
+    linkText: 'Try Sho AI'
+  },
+  {
+    title: 'TBA',
+    description: 'More projects coming soon!',
+    image: '',
+    link: '',
+    linkText: ''
+  }
+];
+
 export const ProjectsSection = () => {
+    const [cardDimensions, setCardDimensions] = useState({ width: 600, height: 500 });
+
+    useEffect(() => {
+        const calculateDimensions = () => {
+            const viewportWidth = window.innerWidth;
+            let width, height;
+
+            if (viewportWidth >= 1200) {
+                width = 600;
+                height = 500;
+            } else if (viewportWidth >= 968) {
+                width = Math.max(500, viewportWidth * 0.5);
+                height = Math.max(420, width * 0.83);
+            } else if (viewportWidth >= 768) {
+                width = Math.max(450, viewportWidth * 0.6);
+                height = Math.max(375, width * 0.83);
+            } else if (viewportWidth >= 480) {
+                width = Math.max(380, viewportWidth * 0.75);
+                height = Math.max(320, width * 0.84);
+            } else {
+                width = Math.max(320, viewportWidth * 0.85);
+                height = Math.max(280, width * 0.875);
+            }
+
+            setCardDimensions({ width, height });
+        };
+
+        calculateDimensions();
+        window.addEventListener('resize', calculateDimensions);
+        return () => window.removeEventListener('resize', calculateDimensions);
+    }, []);
+
     return (
-        <div id="main">
+        <div id="projects-main">
             {/* Section Header */}
-            <h1 className="projects-heading">My Projects:</h1>
-            
-            {/* Projects Grid Container */}
-            <div className="projects-card-container">
-                {/* Project 1: Chrome Extension */}
-                <Fade duration={2000}>
-                    <Tilt glareEnable={true} glareMaxOpacity={0.25} scale={1.05} transitionSpeed={250}>
-                        <div className="project-card">
-                            <div className="project-image">
-                                <img src="/images/icon.png" alt="Web Chrome Extension" />
-                            </div>
-                            <div className="project-content">
-                                <h2>Chrome Extension</h2>
-                                <p>
-                                    Chrome extension that allows users to save and store links or tabs directly on their computer, providing a convenient way to manage and access their browsing sessions.
-                                </p>
-                                <a href="https://github.com/shotacurtisruo/chrome-web-browser-version-1.1" target="_blank" rel="noopener noreferrer">
-                                    Source Code on Github
-                                </a>
-                            </div>
-                        </div>
-                    </Tilt>
-                </Fade>
-                
-                {/* Project 2: Sho AI Chatbot */}
-                <Fade duration={2000}>
-                    <Tilt glareEnable={true} glareMaxOpacity={0.25} scale={1.05} transitionSpeed={250}>
-                        <div className="project-card">
-                            <div className="project-image">
-                                <img src="/images/SHOTA.jpg" alt="Sho AI Chatbot" />
-                            </div>
-                            <div className="project-content">
-                                <h2>Sho AI - Personal Chatbot</h2>
-                                <p>
-                                    An AI-powered chatbot that represents me, built to answer questions about my background, experience, and projects. It's like having a conversation with me! Password: elsie
-                                </p>
-                                <a href="https://sho-ai.vercel.app/" target="_blank" rel="noopener noreferrer">
-                                    Try Sho AI Chatbot
-                                </a>
-                            </div>
-                        </div>
-                    </Tilt>
-                </Fade>
+            <div className="projects-header">
+                <h1>Projects</h1>
             </div>
             
-            {/* Scroll-to-Top Button */}
-            <ScrollToTop
-                smooth
-                component={
-                    <div style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        width: "100%",
-                        height: "100%",
-                    }}>
-                        <FaArrowUp size={22} color="#007c91" />
-                    </div>
-                }
-                style={{
-                    background: "white",
-                    borderRadius: "50%",
-                    boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
-                    right: 32,
-                    bottom: 32,
-                    zIndex: 1000,
-                    width: 52,
-                    height: 52,
-                    border: "2px solid #007c91",
-                    transition: "box-shadow 0.2s, border 0.2s"
-                }}
-            />
+            {/* Projects Container with Card Swap */}
+            <div className="projects-wrapper-swap">
+                <Fade duration={600} triggerOnce={false} fraction={0.2}>
+                    <CardSwap
+                        width={cardDimensions.width}
+                        height={cardDimensions.height}
+                        cardDistance={Math.max(40, cardDimensions.width * 0.1)}
+                        verticalDistance={Math.max(50, cardDimensions.height * 0.14)}
+                        delay={5000}
+                        pauseOnHover={true}
+                        skewAmount={6}
+                        easing="elastic"
+                    >
+                        {projectsData.map((project, index) => (
+                            <Card key={index} customClass="project-card-content">
+                                {project.image ? (
+                                    <div className="project-card-inner">
+                                        <div className="project-card-header">
+                                            <div className="project-image-wrapper">
+                                                <div className="project-image-glow"></div>
+                                                <img src={project.image} alt={project.title} className="project-image" />
+                                            </div>
+                                        </div>
+                                        <div className="project-card-body">
+                                            <div className="project-title-wrapper">
+                                                <h2 className="project-title">{project.title}</h2>
+                                            </div>
+                                            {project.description && (
+                                                <p className="project-description">{project.description}</p>
+                                            )}
+                                        </div>
+                                        {project.link && (
+                                            <div className="project-card-footer">
+                                                <a 
+                                                    href={project.link} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="project-link"
+                                                >
+                                                    <span className="project-link-text">{project.linkText}</span>
+                                                    <svg className="project-link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        )}
+                                    </div>
+                                ) : (
+                                    <div className="project-card-empty">
+                                        <div className="project-card-tba">
+                                            <h2 className="project-tba-title">{project.title}</h2>
+                                            <p className="project-tba-description">{project.description}</p>
+                                        </div>
+                                    </div>
+                                )}
+                            </Card>
+                        ))}
+                    </CardSwap>
+                </Fade>
+            </div>
         </div>
     );
 };

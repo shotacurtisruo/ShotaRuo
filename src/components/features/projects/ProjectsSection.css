@@ -1,170 +1,294 @@
-/* General Styles */
-#main {
-    font-family: "Nunito Sans", sans-serif;
-    padding: 20px;
-    background-color: #FAFAFA; /* Soft off-white background */
-    color: #222; /* Dark text color for contrast */
-}
-
-/* Projects Heading */
-.projects-heading {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #222;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-    letter-spacing: 1px;
-    text-align: center;
-}
-
-/* Projects Container */
-.projects-container {
-    display: grid; /* Use CSS Grid for layout */
-    grid-template-columns: repeat(2, 1fr); /* Create 2 equal-width columns */
-    gap: 20px; /* Add spacing between rows and columns */
-    margin-top: 20px;
-    padding: 0 10%; /* Add 10% padding on the left and right for outer spacing */
-    box-sizing: border-box; /* Include padding in the width calculation */
-    overflow: visible;;
-}
-
-/* Project Box */
-.project-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: white; /* White background for the box */
-    border: 2px solid silver; /* Silver outline */
-    border-radius: 10px; /* Rounded corners */
-    padding: 10px; /* Inner padding for content */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    min-height: 40vh;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-    width: 35vw;
-;
-}
-
-/* Hover Effect */
-.project-box:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-}
-
-/* Projects Card Container */
-.projects-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-}
-
-/* Project Card */
-.project-card {
-    background: white;
-    border-radius: 22px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    padding: 2.2rem 1.7rem 2rem 1.7rem;
-    max-width: 350px;
-    min-width: 270px;
-    min-height: 370px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: box-shadow 0.3s, transform 0.3s;
-    font-family: 'Montserrat', sans-serif;
-    border: 1.5px solid #e0e0e0;
+/* Projects Section */
+#projects-main {
+    background-color: #FAFAFA;
+    min-height: auto;
+    padding: clamp(2rem, 5vw, 4rem) 0 clamp(2rem, 4vw, 3rem) 0;
     position: relative;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Projects Header - Styled like Experience Header */
+.projects-header {
+    text-align: center;
+    margin: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 4rem) clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem);
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.projects-header h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: bold;
+    color: #222;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Projects Wrapper */
+.projects-wrapper-swap {
+    position: relative;
+    width: 100%;
+    height: clamp(350px, 50vw, 650px);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: clamp(0.75rem, 2vw, 2rem) clamp(0.75rem, 2vw, 2rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+
+/* Project Card Content */
+.project-card-content {
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%) !important;
+    border: none !important;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.06),
+        0 2px 8px rgba(0, 0, 0, 0.04) !important;
     overflow: hidden;
 }
 
-.project-card:hover {
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    transform: translateY(-10px) scale(1.045);
-    border-color: #007c91;
+.project-card-empty {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Project Image */
+.project-card-tba {
+    text-align: center;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.project-tba-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+    font-size: clamp(1.75rem, 4.5vw, 3rem);
+    font-weight: 600;
+    color: #1d1d1f;
+    margin: 0 0 clamp(0.5rem, 1.5vw, 1rem) 0;
+    letter-spacing: -0.03em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.project-tba-description {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif;
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+    font-weight: 400;
+    color: #6e6e73;
+    margin: 0;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 90%;
+}
+
+/* Project Card Inner */
+.project-card-inner {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Project Card Header - Image Section */
+.project-card-header {
+    flex: 0 0 auto;
+    padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3.5rem) clamp(1rem, 3vw, 2.5rem) clamp(1.5rem, 4vw, 3.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.project-image-wrapper {
+    position: relative;
+    width: clamp(80px, 18vw, 200px);
+    height: clamp(80px, 18vw, 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(0, 124, 145, 0.08) 0%, rgba(0, 168, 184, 0.12) 100%);
+    filter: blur(20px);
+    opacity: 0.6;
+    z-index: 0;
+}
+
 .project-image {
     position: relative;
-    overflow: visible;
-    border: none;              /* Remove the white border/frame */
-    border-radius: 0;          /* Remove rounded corners from the frame */
-    box-shadow: none;          /* Remove frame shadow */
-    transition: transform 0.3s ease;
-    width: auto;               /* Let the image size itself */
-    background: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.project-image img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    border-radius: 16px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 18px rgba(0,0,0,0.1);
-    background: #f5f5f5;
-    transition: transform 0.3s;
-}
-
-.project-image:hover {
-    transform: scale(1.05);
-    box-shadow: none; /* No frame shadow on hover */
-}
-
-.project-image:hover img {
-    transform: scale(1.12);
-}
-
-/* Project Content */
-.project-content {
-    text-align: center;
-    margin-top: 0;
-    padding: 5px;
-    height: auto;
     width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.12));
+    transition: transform 0.3s ease;
 }
 
-.project-content h2 {
-    font-size: 1.35rem;
-    margin-bottom: 0.7rem;
-    color: #222;
-    font-family: 'Montserrat', sans-serif;
+.project-card-content:hover .project-image {
+    transform: scale(1.05);
+}
+
+/* Project Card Body - Content Section */
+.project-card-body {
+    flex: 1 1 auto;
+    padding: 0 clamp(1.5rem, 4vw, 3.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(0.75rem, 1.8vw, 1.25rem);
+    min-height: 0;
+}
+
+.project-title-wrapper {
+    margin-bottom: clamp(0.25rem, 0.8vw, 0.5rem);
+}
+
+.project-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
     font-weight: 600;
-    letter-spacing: 0.5px;
+    color: #1d1d1f;
+    margin: 0;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-.project-content p {
-    font-size: 1.05rem;
-    color: #444;
-    margin-bottom: 1.1rem;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.5;
+.project-description {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif;
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
+    font-weight: 400;
+    color: #6e6e73;
+    margin: 0;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-.project-content a {
+/* Project Card Footer - Link Section */
+.project-card-footer {
+    flex: 0 0 auto;
+    padding: clamp(1rem, 3vw, 2.5rem) clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(0.3rem, 0.8vw, 0.5rem);
+    padding: clamp(0.5rem, 1.2vw, 0.75rem) clamp(0.9rem, 2vw, 1.5rem);
+    background: #1d1d1f;
     color: white;
-    background: linear-gradient(90deg, #007c91 0%, #00a8b8 100%);
-    padding: 0.5rem 1.2rem;
-    border-radius: 18px;
     text-decoration: none;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(0,124,145,0.2);
-    display: inline-block;
+    border-radius: clamp(8px, 1.2vw, 12px);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif;
+    font-size: clamp(0.75rem, 1.6vw, 0.95rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
 }
 
-.project-content a:hover {
-    background: linear-gradient(90deg, #005a6b 0%, #007c91 100%);
+.project-link:hover {
+    background: #2d2d2f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-link:active {
+    transform: translateY(0);
+}
+
+.project-link-text {
     color: white;
-    box-shadow: 0 4px 16px rgba(0,124,145,0.3);
 }
 
+.project-link-arrow {
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover .project-link-arrow {
+    transform: translateX(4px);
+}
+
+/* Responsive Design - clamp() handles most sizing, these are for layout adjustments */
+@media (max-width: 768px) {
+    #projects-main {
+        padding: clamp(1.5rem, 4vw, 2rem) 0 clamp(1.5rem, 3vw, 2rem) 0;
+        min-height: auto;
+    }
+
+    .projects-header {
+        margin: clamp(1.5rem, 4vw, 2rem) clamp(0.75rem, 3vw, 1rem) clamp(1rem, 2.5vw, 1.5rem) clamp(0.75rem, 3vw, 1rem);
+    }
+
+    .projects-wrapper-swap {
+        height: clamp(350px, 55vw, 500px);
+        padding: clamp(0.5rem, 1.5vw, 1rem) clamp(0.5rem, 1.5vw, 1rem);
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    #projects-main {
+        padding: clamp(1rem, 3vw, 1.5rem) 0 clamp(1rem, 2.5vw, 1.5rem) 0;
+        min-height: auto;
+    }
+
+    .projects-header {
+        margin: clamp(1rem, 3vw, 1.5rem) clamp(0.5rem, 2vw, 0.75rem) clamp(0.75rem, 2vw, 1.25rem) clamp(0.5rem, 2vw, 0.75rem);
+    }
+
+    .projects-wrapper-swap {
+        height: clamp(320px, 65vw, 450px);
+        padding: clamp(0.5rem, 1.2vw, 0.75rem) clamp(0.5rem, 1.2vw, 0.75rem);
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .projects-header {
+        margin: clamp(0.75rem, 2.5vw, 1rem) clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2.5vw, 1.5rem) clamp(0.5rem, 1.5vw, 0.75rem);
+    }
+}
