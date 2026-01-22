@@ -2,8 +2,8 @@
 #main {
     font-family: "Nunito Sans", sans-serif;
     padding: 20px;
-    background-color: #000000; /* Black background */
-    color: white; /* Default text color for contrast */
+    background-color: #FAFAFA; /* Soft off-white background */
+    color: #222; /* Dark text color for contrast */
 }
 
 /* Projects Heading */
@@ -11,7 +11,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #fff;
+    color: #222;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
     letter-spacing: 1px;
@@ -65,9 +65,9 @@
 
 /* Project Card */
 .project-card {
-    background: rgba(30, 30, 30, 0.96);
+    background: white;
     border-radius: 22px;
-    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.28), 0 0 32px 8px #fff3;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     padding: 2.2rem 1.7rem 2rem 1.7rem;
     max-width: 350px;
     min-width: 270px;
@@ -77,15 +77,15 @@
     align-items: center;
     transition: box-shadow 0.3s, transform 0.3s;
     font-family: 'Montserrat', sans-serif;
-    border: 1.5px solid #fff2;
+    border: 1.5px solid #e0e0e0;
     position: relative;
     overflow: hidden;
 }
 
 .project-card:hover {
-    box-shadow: 0 0 40px 12px #fff, 0 8px 32px 0 rgba(0,0,0,0.28);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     transform: translateY(-10px) scale(1.045);
-    border-color: #fff;
+    border-color: #007c91;
 }
 
 /* Project Image */
@@ -109,8 +109,8 @@
     object-fit: contain;
     border-radius: 16px;
     margin-bottom: 1.5rem;
-    box-shadow: 0 2px 18px rgba(255,255,255,0.12);
-    background: #fff;
+    box-shadow: 0 2px 18px rgba(0,0,0,0.1);
+    background: #f5f5f5;
     transition: transform 0.3s;
 }
 
@@ -135,7 +135,7 @@
 .project-content h2 {
     font-size: 1.35rem;
     margin-bottom: 0.7rem;
-    color: #fff;
+    color: #222;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -143,28 +143,28 @@
 
 .project-content p {
     font-size: 1.05rem;
-    color: #e0e0e0;
+    color: #444;
     margin-bottom: 1.1rem;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.5;
 }
 
 .project-content a {
-    color: #fff;
-    background: linear-gradient(90deg, #00fff7 0%, #007c91 100%);
+    color: white;
+    background: linear-gradient(90deg, #007c91 0%, #00a8b8 100%);
     padding: 0.5rem 1.2rem;
     border-radius: 18px;
     text-decoration: none;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(0,255,247,0.12);
+    box-shadow: 0 2px 8px rgba(0,124,145,0.2);
     display: inline-block;
 }
 
 .project-content a:hover {
-    background: linear-gradient(90deg, #fff 0%, #00fff7 100%);
-    color: #222;
-    box-shadow: 0 0 16px #00fff7;
+    background: linear-gradient(90deg, #005a6b 0%, #007c91 100%);
+    color: white;
+    box-shadow: 0 4px 16px rgba(0,124,145,0.3);
 }
 

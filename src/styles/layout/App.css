@@ -6,7 +6,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: #FAFAFA;
   
 }
 html {
@@ -20,7 +20,7 @@ section {
 
 #root {
   height: 100%;
-  background-color: black;
+  background-color: #FAFAFA;
 }
 
 .App {
@@ -64,7 +64,7 @@ h2{
   font-family: "opensans", sans-serif;
   font-size:1.5vw;
   padding: 10px;
-  color: white;
+  color: #222;
   
 }
 
@@ -80,7 +80,7 @@ h4{
   font-family: "opensans", sans-serif;
   font-size:2vw;
   padding: 15px;
-  color: white;
+  color: #222;
 
 }
 
@@ -93,7 +93,7 @@ p {
 }
 p1{
   font-family: "opensans", sans-serif;
-  color: white;
+  color: #222;
   font-size: 2.0vw;
   padding: 6px;
 }

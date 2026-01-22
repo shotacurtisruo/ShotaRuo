@@ -74,19 +74,19 @@ export const ProjectsSection = () => {
                         width: "100%",
                         height: "100%",
                     }}>
-                        <FaArrowUp size={22} color="#00fff7" />
+                        <FaArrowUp size={22} color="#007c91" />
                     </div>
                 }
                 style={{
-                    background: "rgba(30,30,30,0.92)",
+                    background: "white",
                     borderRadius: "50%",
-                    boxShadow: "0 4px 24px 0 #00fff7, 0 2px 12px rgba(0,0,0,0.18)",
+                    boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
                     right: 32,
                     bottom: 32,
                     zIndex: 1000,
                     width: 52,
                     height: 52,
-                    border: "2px solid #00fff7",
+                    border: "2px solid #007c91",
                     transition: "box-shadow 0.2s, border 0.2s"
                 }}
             />

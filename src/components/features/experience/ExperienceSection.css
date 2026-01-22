@@ -1,16 +1,27 @@
 .experience-header {
     text-align: center;
-    margin: 40px; /* Add spacing below the header */
+    margin: 40px 40px 10px 40px; /* Add spacing below the header */
     animation: fadeIn 2s ease-in-out; /* Apply fade-in animation */
 }
 
 .experience-header h1 {
     font-size: 3rem; /* Make the header stand out */
     font-weight: bold;
-    color: #ffffff; /* White text color */
-    /* Remove the glowing effect */
-    /* text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); */
+    color: #222; /* Dark text color */
     margin: 0;
+}
+
+/* Model Viewer Container */
+.experience-model-viewer {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    position: relative;
+    margin-top: 0.5rem;
 }
 
 /* Fade-in Animation */
@@ -159,7 +170,7 @@
     text-align: center; /* Center the heading */
     font-size: 1.5rem; /* Adjust the font size */
     font-weight: bold; /* Make the text bold */
-    color: #ffffff; /* White text color */
+    color: #222; /* Dark text color */
     margin-bottom: -30px; /* Reduce spacing below the heading */
     font-family: "Nunito Sans", sans-serif; /* Match the font style */
 }

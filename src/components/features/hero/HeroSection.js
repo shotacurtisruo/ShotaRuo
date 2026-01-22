@@ -1,54 +1,41 @@
 /* ============================================
-   ANIMATION COMPONENT (Hero Section)
+   HERO SECTION COMPONENT
    ============================================
-   Hero section with 3D animated background using Vanta.js
-   - Uses Three.js for 3D globe animation
-   - Displays introduction text overlay
+   Minimal centered hero section with portrait
    ============================================ */
 
-import '../../../utils/global-three'; // Sets window.THREE for Vanta.js
-import GLOBE from 'vanta/dist/vanta.globe.min';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import './HeroSection.css';
 
 export const HeroSection = () => {
-  // Ref for the DOM element that will contain the Vanta.js animation
-  const vantaRef = useRef(null);
-
-  // Initialize and cleanup Vanta.js animation
-  useEffect(() => {
-    console.log("Vanta mount");
-    if (!vantaRef.current) return;
-    
-    // Create Vanta.js globe effect
-    let vantaEffect = GLOBE({
-      el: vantaRef.current,
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      scale: 1.0,
-      scaleMobile: 1.0,
-      color: 0x00ffff,      // Cyan
-      color2: 0xff00ff,     // Magenta
-      backgroundColor: 0x0f0f0f  // Dark background
-    });
-    
-    // Cleanup function: destroy animation on unmount
-    return () => {
-      console.log("Vanta unmount");
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, []); // Empty dependency array: run once on mount
-
   return (
-    <div className="animation-container" ref={vantaRef}>
-      {/* Introduction Text Overlay */}
-      <div className="animation-intro-box">
-        <h1>Hi, I'm Shota</h1>
-        <p>A Software Engineer.</p>
+    <div className="hero-container">
+      <div className="hero-content">
+        {/* Portrait */}
+        <div className="hero-portrait">
+          <img src="/images/SHOTA.jpg" alt="Shota Ruo" />
+        </div>
+        
+        {/* Name */}
+        <h1 className="hero-name">Shota Curtis Ruo</h1>
+        
+        {/* Introduction */}
+        <div className="hero-intro">
+          <p className="hero-title">Software Engineer</p>
+          <p className="hero-description">
+            Studying Statistical Data Science at UC Davis
+          </p>
+          <p className="hero-description">
+            Specializing in frontend development and mobile app creation
+          </p>
+          <p className="hero-current">
+            Currently working at <span className="hero-company">Buzzit</span>
+          </p>
+        </div>
       </div>
+      
+      {/* Subtle background decoration */}
+      <div className="hero-decoration"></div>
     </div>
   );
 };
