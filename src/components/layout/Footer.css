@@ -1,0 +1,304 @@
+/* ============================================
+   FOOTER STYLES
+   ============================================
+   Minimal, sleek footer design
+   - Centered layout
+   - Subtle social icons
+   - Clean typography
+   ============================================ */
+
+.footer {
+    background-color: #FAFAFA;
+    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem) clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem);
+    margin-top: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+/* 3D Model on Left - Always on left side */
+.footer-model {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    min-width: clamp(120px, 18vw, 180px);
+    width: clamp(120px, 18vw, 180px);
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.footer-model:hover {
+    transform: scale(1.05);
+}
+
+.footer-3d-model {
+    width: clamp(120px, 18vw, 180px) !important;
+    height: clamp(120px, 18vw, 180px) !important;
+    max-width: clamp(120px, 18vw, 180px) !important;
+    min-width: clamp(120px, 18vw, 180px) !important;
+    min-height: clamp(120px, 18vw, 180px) !important;
+    margin: 0 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    background: transparent !important;
+    overflow: visible !important;
+}
+
+.footer-3d-model .model-viewer-canvas {
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
+    display: block !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+}
+
+.footer-3d-model .model-viewer-canvas canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    position: relative !important;
+}
+
+/* Center Content */
+.footer-center {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+/* Social Media Links */
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: #6e6e73;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 124, 145, 0.05) 0%, rgba(0, 168, 184, 0.08) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.12);
+    color: #1d1d1f;
+}
+
+.social-link:hover::before {
+    opacity: 1;
+}
+
+.social-link:active {
+    transform: translateY(0);
+}
+
+.social-icon {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+    transform: scale(1.1);
+}
+
+/* Attribution */
+.footer-attribution {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-text {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #86868b;
+    margin: 0;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-year {
+    color: #6e6e73;
+}
+
+.footer-separator {
+    color: #c0c0c0;
+    font-weight: 300;
+}
+
+.footer-name {
+    color: #1d1d1f;
+    font-weight: 500;
+}
+
+/* Responsive Design - Keep horizontal layout on mobile */
+@media (max-width: 768px) {
+    .footer {
+        padding: clamp(1.5rem, 3vw, 2.5rem) clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 2.5vw, 2rem) clamp(0.75rem, 2vw, 1rem);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr auto 1fr; /* Keep grid layout */
+        gap: clamp(0.75rem, 2vw, 1.5rem);
+        align-items: center;
+    }
+
+    .footer-model {
+        grid-column: 1;
+        justify-content: flex-start;
+        width: clamp(100px, 15vw, 140px);
+        min-width: clamp(100px, 15vw, 140px);
+    }
+
+    .footer-3d-model {
+        width: clamp(100px, 15vw, 140px) !important;
+        height: clamp(100px, 15vw, 140px) !important;
+        min-width: clamp(100px, 15vw, 140px) !important;
+        min-height: clamp(100px, 15vw, 140px) !important;
+    }
+
+    .footer-center {
+        grid-column: 2;
+        width: auto;
+        gap: clamp(1rem, 2.5vw, 1.5rem);
+    }
+
+    .footer-social {
+        gap: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .footer-social {
+        gap: 1.5rem;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .footer-text {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: clamp(1.25rem, 2.5vw, 1.75rem) clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 0.75rem);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr auto 1fr; /* Keep grid layout */
+        gap: clamp(0.5rem, 1.5vw, 1rem);
+        align-items: center;
+    }
+
+    .footer-model {
+        grid-column: 1;
+        justify-content: flex-start;
+        width: clamp(80px, 12vw, 120px);
+        min-width: clamp(80px, 12vw, 120px);
+    }
+
+    .footer-3d-model {
+        width: clamp(80px, 12vw, 120px) !important;
+        height: clamp(80px, 12vw, 120px) !important;
+        min-width: clamp(80px, 12vw, 120px) !important;
+        min-height: clamp(80px, 12vw, 120px) !important;
+    }
+
+    .footer-center {
+        grid-column: 2;
+        width: auto;
+        gap: clamp(0.75rem, 2vw, 1.25rem);
+    }
+
+    .footer-social {
+        gap: clamp(0.75rem, 1.5vw, 1.25rem);
+    }
+
+    .social-link {
+        width: clamp(36px, 8vw, 40px);
+        height: clamp(36px, 8vw, 40px);
+    }
+
+    .footer-social {
+        gap: 1.25rem;
+    }
+
+    .social-link {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+    }
+
+    .social-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .footer-separator {
+        display: none;
+    }
+}

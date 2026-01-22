@@ -1,0 +1,396 @@
+/* ============================================
+   EXPERIENCE COMPONENT
+   ============================================
+   Minimal timeline-style experience cards with smooth animations
+   - Vertical timeline with connecting lines
+   - Cards slide in from alternating sides
+   - Clean, modern design matching website aesthetic
+   - Fully responsive and dynamically sized
+   ============================================ */
+
+/* Main Container */
+#main {
+    height: auto;
+    overflow: visible !important;
+    padding: 2rem 0;
+}
+
+/* Section Header */
+.experience-header {
+    text-align: center;
+    margin: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 4rem) clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 4rem);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.experience-header h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: bold;
+    color: #222;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Model Viewer Container - Dynamically Sized */
+.experience-model-viewer {
+    width: 100%;
+    max-width: clamp(280px, 35vw, 500px);
+    height: clamp(150px, 25vw, 250px);
+    margin: 0 auto clamp(1rem, 3vw, 2rem) auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible !important;
+    position: relative;
+    z-index: 10;
+    clip-path: none !important;
+}
+
+/* Timeline Container */
+.experience-timeline {
+    max-width: min(1000px, 95vw);
+    margin: clamp(2rem, 5vw, 4rem) auto;
+    padding: clamp(1rem, 3vw, 2rem) clamp(0.75rem, 3vw, 1.5rem);
+    position: relative;
+}
+
+/* Vertical Timeline Line */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, 
+        transparent 0%,
+        rgba(0, 0, 0, 0.08) 10%,
+        rgba(0, 0, 0, 0.12) 50%,
+        rgba(0, 0, 0, 0.08) 90%,
+        transparent 100%);
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* Timeline Item */
+.timeline-item {
+    position: relative;
+    margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+    z-index: 1;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Timeline Card */
+.timeline-card {
+    width: 45%;
+    background: white;
+    border-radius: clamp(12px, 2vw, 16px);
+    padding: 0;
+    box-shadow: 
+        0 2px 12px rgba(0, 0, 0, 0.04),
+        0 1px 4px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        rgba(0, 0, 0, 0.05) 0%,
+        rgba(0, 0, 0, 0.1) 50%,
+        rgba(0, 0, 0, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+        0 12px 32px rgba(0, 0, 0, 0.08),
+        0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.timeline-card:hover::before {
+    opacity: 1;
+}
+
+.timeline-card-inner {
+    padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* Left-aligned cards */
+.timeline-left .timeline-card {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Right-aligned cards */
+.timeline-right .timeline-card {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* Card Header */
+.timeline-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+    margin-bottom: clamp(1rem, 2.5vw, 1.25rem);
+    padding-bottom: clamp(1rem, 2.5vw, 1.25rem);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Timeline Logo */
+.timeline-logo {
+    width: clamp(44px, 6vw, 60px);
+    height: clamp(44px, 6vw, 60px);
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #FAFAFA 0%, #F0F0F0 100%);
+    border-radius: clamp(10px, 1.5vw, 12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(0.5rem, 1.2vw, 0.75rem);
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-card:hover .timeline-logo {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.timeline-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
+}
+
+/* Timeline Info */
+.timeline-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.25rem, 1vw, 0.5rem);
+}
+
+.timeline-role {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.timeline-company {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 500;
+    color: #666;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+/* Timeline Card Body */
+.timeline-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.625rem, 1.5vw, 0.875rem);
+}
+
+.timeline-duration {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+    font-weight: 500;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: inline-block;
+    width: fit-content;
+    padding: clamp(0.2rem, 0.5vw, 0.25rem) clamp(0.5rem, 1.2vw, 0.75rem);
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: clamp(4px, 1vw, 6px);
+}
+
+/* Timeline Description */
+.timeline-description {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    font-weight: 400;
+    color: #555;
+    margin: 0;
+    line-height: 1.65;
+    letter-spacing: -0.01em;
+}
+
+/* Responsive Design - Tablet and below - Keep alternating layout */
+@media (max-width: 968px) {
+    .timeline-line {
+        left: 50%;
+    }
+
+    .timeline-card {
+        width: calc(48% - 1rem);
+        max-width: 400px;
+    }
+
+    .timeline-left .timeline-card {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .timeline-right .timeline-card {
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
+
+/* Mobile responsiveness - Keep alternating layout */
+@media (max-width: 768px) {
+    #main {
+        padding: 1.5rem 0;
+    }
+
+    .experience-timeline {
+        padding: clamp(1rem, 3vw, 1.5rem) clamp(0.5rem, 2vw, 1rem);
+    }
+
+    .timeline-line {
+        left: 50%;
+    }
+
+    .timeline-card {
+        width: calc(47% - 0.5rem);
+        max-width: 350px;
+    }
+
+    .timeline-left .timeline-card {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .timeline-right .timeline-card {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .timeline-card-inner {
+        padding: clamp(1rem, 3vw, 1.5rem);
+    }
+
+    .timeline-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: clamp(0.75rem, 2vw, 1rem);
+    }
+}
+
+/* Small mobile - Keep alternating layout with narrower cards */
+@media (max-width: 480px) {
+    #main {
+        padding: 1rem 0;
+    }
+
+    .experience-timeline {
+        padding: clamp(0.75rem, 2vw, 1rem) clamp(0.25rem, 1vw, 0.5rem);
+    }
+
+    .timeline-line {
+        left: 50%;
+    }
+
+    .timeline-card {
+        width: calc(48% - 0.25rem);
+        max-width: 300px;
+    }
+
+    .timeline-left .timeline-card {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .timeline-right .timeline-card {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .timeline-card-inner {
+        padding: clamp(0.875rem, 2.5vw, 1.25rem);
+    }
+}
+
+/* Very small screens - Keep alternating layout */
+@media (max-width: 360px) {
+    .experience-model-viewer {
+        max-width: 95%;
+        height: clamp(120px, 30vw, 150px);
+    }
+
+    .experience-timeline {
+        padding: clamp(0.75rem, 2vw, 1rem) clamp(0.25rem, 1vw, 0.5rem);
+    }
+
+    .timeline-line {
+        left: 50%;
+    }
+
+    .timeline-card {
+        width: calc(47% - 0.25rem);
+        max-width: 280px;
+    }
+
+    .timeline-left .timeline-card {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .timeline-right .timeline-card {
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
+
+/* Large desktop */
+@media (min-width: 1440px) {
+    .experience-model-viewer {
+        max-width: 550px;
+        height: 280px;
+    }
+}
+
+/* Extra large desktop */
+@media (min-width: 1920px) {
+    .experience-model-viewer {
+        max-width: 600px;
+        height: 300px;
+    }
+}

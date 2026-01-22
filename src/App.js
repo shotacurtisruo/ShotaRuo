@@ -2,29 +2,23 @@
    MAIN APP COMPONENT
    ============================================ */
 
-import './App.css';
+import './styles/layout/App.css';
 
-// Three.js setup for Vanta.js animations
-import * as THREE from 'three';
+// Layout Components
+import { Header } from './components/layout/Header';
+import { Footer } from './components/layout/Footer';
 
-// Component Imports
-import { Experience } from './components/experience';
-import { Header } from './components/header';
-import { MyProjects } from './components/myProjects';
-import { Animation } from './components/Animation';
-import { Footer } from './components/footer';
-
-// Make THREE.js available globally for Vanta.js
-if (!window.THREE) {
-    window.THREE = THREE;
-}
+// Feature Components
+import { HeroSection } from './components/features/hero/HeroSection';
+import { ExperienceSection } from './components/features/experience/ExperienceSection';
+import { ProjectsSection } from './components/features/projects/ProjectsSection';
 
 /**
  * Main App Component
  * 
  * Structure:
  * - Header: Navigation bar with profile photo and menu
- * - Animation: Hero section with 3D animated background
+ * - Hero: Clean hero section with white background
  * - Experience: Work experience and tech stack display
  * - MyProjects: Portfolio projects showcase
  * - Footer: Social links and site info
@@ -37,19 +31,19 @@ function App() {
       
       {/* Main Content Sections */}
       <main className="main-content">
-        {/* Hero Section with 3D Animation */}
+        {/* Hero Section */}
         <section id="animation">
-          <Animation />
+          <HeroSection />
         </section>
         
         {/* Experience Section */}
         <section id="experience">
-          <Experience />
+          <ExperienceSection />
         </section>
         
         {/* Projects Section */}
         <section id="myprojects">
-          <MyProjects />
+          <ProjectsSection />
         </section>
       </main>
       

@@ -1,0 +1,320 @@
+/* Projects Section */
+#projects-main {
+    background-color: #FAFAFA;
+    min-height: auto;
+    padding: clamp(2rem, 5vw, 4rem) 0 clamp(2rem, 4vw, 3rem) 0;
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Projects Header - Styled like Experience Header */
+.projects-header {
+    text-align: center;
+    margin: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 4rem) clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem);
+    margin-bottom: clamp(3rem, 6vw, 6rem); /* Ensure sufficient spacing from cards */
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+    z-index: 10; /* Higher z-index to ensure header stays above cards */
+}
+
+.projects-header h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: bold;
+    color: #222;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Projects Wrapper */
+.projects-wrapper-swap {
+    position: relative;
+    width: 100%;
+    height: clamp(350px, 50vw, 650px);
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 0; /* Ensure no negative margin that could cause overlap */
+    padding: clamp(0.75rem, 2vw, 2rem) clamp(0.75rem, 2vw, 2rem);
+    padding-top: clamp(2rem, 4vw, 3rem); /* Extra top padding to prevent card overlap */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Lower than header but above background */
+}
+
+/* Project Card Content */
+.project-card-content {
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%) !important;
+    border: none !important;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.06),
+        0 2px 8px rgba(0, 0, 0, 0.04) !important;
+    overflow: hidden;
+}
+
+.project-card-empty {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card-tba {
+    text-align: center;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.project-tba-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+    font-size: clamp(1.75rem, 4.5vw, 3rem);
+    font-weight: 600;
+    color: #1d1d1f;
+    margin: 0 0 clamp(0.5rem, 1.5vw, 1rem) 0;
+    letter-spacing: -0.03em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.project-tba-description {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif;
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+    font-weight: 400;
+    color: #6e6e73;
+    margin: 0;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 90%;
+}
+
+/* Project Card Inner */
+.project-card-inner {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Project Card Header - Image Section */
+.project-card-header {
+    flex: 0 0 auto;
+    padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3.5rem) clamp(1rem, 3vw, 2.5rem) clamp(1.5rem, 4vw, 3.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.project-image-wrapper {
+    position: relative;
+    width: clamp(80px, 18vw, 200px);
+    height: clamp(80px, 18vw, 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(0, 124, 145, 0.08) 0%, rgba(0, 168, 184, 0.12) 100%);
+    filter: blur(20px);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.project-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.12));
+    transition: transform 0.3s ease;
+}
+
+.project-card-content:hover .project-image {
+    transform: scale(1.05);
+}
+
+/* Project Card Body - Content Section */
+.project-card-body {
+    flex: 1 1 auto;
+    padding: 0 clamp(1.5rem, 4vw, 3.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(0.75rem, 1.8vw, 1.25rem);
+    min-height: 0;
+}
+
+.project-title-wrapper {
+    margin-bottom: clamp(0.25rem, 0.8vw, 0.5rem);
+}
+
+.project-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
+    font-weight: 600;
+    color: #1d1d1f;
+    margin: 0;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.project-description {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif;
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
+    font-weight: 400;
+    color: #6e6e73;
+    margin: 0;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Project Card Footer - Link Section */
+.project-card-footer {
+    flex: 0 0 auto;
+    padding: clamp(1rem, 3vw, 2.5rem) clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(0.3rem, 0.8vw, 0.5rem);
+    padding: clamp(0.5rem, 1.2vw, 0.75rem) clamp(0.9rem, 2vw, 1.5rem);
+    background: #1d1d1f;
+    color: white;
+    text-decoration: none;
+    border-radius: clamp(8px, 1.2vw, 12px);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif;
+    font-size: clamp(0.75rem, 1.6vw, 0.95rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.project-link:hover {
+    background: #2d2d2f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-link:active {
+    transform: translateY(0);
+}
+
+.project-link-text {
+    color: white;
+}
+
+.project-link-arrow {
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover .project-link-arrow {
+    transform: translateX(4px);
+}
+
+/* Responsive Design - clamp() handles most sizing, these are for layout adjustments */
+@media (max-width: 768px) {
+    #projects-main {
+        padding: clamp(1.5rem, 4vw, 2rem) 0 clamp(1.5rem, 3vw, 2rem) 0;
+        min-height: auto;
+    }
+
+    .projects-header {
+        margin: clamp(1.5rem, 4vw, 2rem) clamp(0.75rem, 3vw, 1rem) 0 clamp(0.75rem, 3vw, 1rem);
+        margin-bottom: clamp(5rem, 10vw, 7rem) !important; /* Significantly increased spacing to prevent overlap on mobile */
+        padding-bottom: clamp(1rem, 2vw, 2rem); /* Additional padding for buffer */
+        z-index: 10;
+        position: relative;
+    }
+
+    .projects-wrapper-swap {
+        height: clamp(350px, 55vw, 500px);
+        padding: clamp(1.5rem, 3vw, 2.5rem) clamp(0.5rem, 1.5vw, 1rem) clamp(0.5rem, 1.5vw, 1rem) clamp(0.5rem, 1.5vw, 1rem);
+        margin-top: clamp(2rem, 4vw, 3rem) !important; /* Increased top margin to create extra space from header */
+        margin-bottom: 0;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    #projects-main {
+        padding: clamp(1rem, 3vw, 1.5rem) 0 clamp(1rem, 2.5vw, 1.5rem) 0;
+        min-height: auto;
+    }
+
+    .projects-header {
+        margin: clamp(1rem, 3vw, 1.5rem) clamp(0.5rem, 2vw, 0.75rem) 0 clamp(0.5rem, 2vw, 0.75rem);
+        margin-bottom: clamp(4.5rem, 9vw, 6.5rem) !important; /* Significantly increased spacing to prevent overlap on small mobile */
+        padding-bottom: clamp(1rem, 2vw, 1.5rem); /* Additional padding for buffer */
+        z-index: 10;
+        position: relative;
+    }
+
+    .projects-wrapper-swap {
+        height: clamp(320px, 65vw, 450px);
+        padding: clamp(1.5rem, 3vw, 2rem) clamp(0.5rem, 1.2vw, 0.75rem) clamp(0.5rem, 1.2vw, 0.75rem) clamp(0.5rem, 1.2vw, 0.75rem);
+        margin-top: clamp(1.5rem, 3vw, 2.5rem) !important; /* Increased top margin to create extra space from header */
+        margin-bottom: 0;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 360px) {
+    .projects-header {
+        margin: clamp(0.75rem, 2.5vw, 1rem) clamp(0.5rem, 1.5vw, 0.75rem) 0 clamp(0.5rem, 1.5vw, 0.75rem);
+        margin-bottom: clamp(4rem, 8vw, 5.5rem) !important; /* Significantly increased spacing to prevent overlap on very small screens */
+        padding-bottom: clamp(0.75rem, 1.5vw, 1.25rem); /* Additional padding for buffer */
+        z-index: 10;
+        position: relative;
+    }
+
+    .projects-wrapper-swap {
+        margin-top: clamp(1.25rem, 2.5vw, 2rem) !important; /* Extra spacing on very small screens */
+        padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
+    }
+}

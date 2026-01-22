@@ -1,0 +1,134 @@
+.model-viewer-container {
+  width: 50%;
+  max-width: 400px;
+  height: 200px;
+  position: relative;
+  background: transparent;
+  border-radius: 20px;
+  overflow: visible !important;
+  margin: 0.5rem auto 2rem auto;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make Canvas larger than container and absolutely positioned to allow overflow */
+.model-viewer-canvas {
+  position: absolute !important;
+  width: 200% !important;
+  height: 200% !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  overflow: visible !important;
+  clip-path: none !important;
+  pointer-events: auto !important;
+}
+
+.model-viewer-canvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible !important;
+  clip-path: none !important;
+}
+
+/* Tablet responsiveness */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .model-viewer-container {
+    width: 55%;
+    max-width: 450px;
+    height: 220px;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .model-viewer-container {
+    width: 70%;
+    max-width: 350px;
+    height: 180px;
+    margin: 0.5rem auto 1.5rem auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .model-viewer-container {
+    width: 80%;
+    max-width: 300px;
+    height: 150px;
+    margin: 0.5rem auto 1rem auto;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 360px) {
+  .model-viewer-container {
+    width: 85%;
+    max-width: 280px;
+    height: 130px;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1440px) {
+  .model-viewer-container {
+    width: 45%;
+    max-width: 450px;
+    height: 240px;
+  }
+}
+
+/* Extra large desktop */
+@media (min-width: 1920px) {
+  .model-viewer-container {
+    width: 40%;
+    max-width: 500px;
+    height: 260px;
+  }
+}
+
+/* Footer-specific model viewer styles */
+.footer-3d-model {
+  width: clamp(120px, 18vw, 180px) !important;
+  height: clamp(120px, 18vw, 180px) !important;
+  max-width: clamp(120px, 18vw, 180px) !important;
+  min-width: clamp(120px, 18vw, 180px) !important;
+  min-height: clamp(120px, 18vw, 180px) !important;
+  margin: 0 !important;
+  position: relative !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  overflow: visible !important;
+  border: none !important;
+}
+
+.footer-3d-model .model-viewer-canvas {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  display: block !important;
+  visibility: visible !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.footer-3d-model .model-viewer-canvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  visibility: visible !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  outline: none !important;
+}
