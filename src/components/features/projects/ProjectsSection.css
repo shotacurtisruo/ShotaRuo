@@ -11,9 +11,10 @@
 .projects-header {
     text-align: center;
     margin: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 4rem) clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem);
+    margin-bottom: clamp(3rem, 6vw, 6rem); /* Ensure sufficient spacing from cards */
     animation: fadeIn 2s ease-in-out;
     position: relative;
-    z-index: 1;
+    z-index: 10; /* Higher z-index to ensure header stays above cards */
 }
 
 .projects-header h1 {
@@ -44,11 +45,13 @@
     height: clamp(350px, 50vw, 650px);
     max-width: 1400px;
     margin: 0 auto;
+    margin-top: 0; /* Ensure no negative margin that could cause overlap */
     padding: clamp(0.75rem, 2vw, 2rem) clamp(0.75rem, 2vw, 2rem);
+    padding-top: clamp(2rem, 4vw, 3rem); /* Extra top padding to prevent card overlap */
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 0;
+    z-index: 1; /* Lower than header but above background */
 }
 
 /* Project Card Content */
@@ -260,13 +263,20 @@
     }
 
     .projects-header {
-        margin: clamp(1.5rem, 4vw, 2rem) clamp(0.75rem, 3vw, 1rem) clamp(1rem, 2.5vw, 1.5rem) clamp(0.75rem, 3vw, 1rem);
+        margin: clamp(1.5rem, 4vw, 2rem) clamp(0.75rem, 3vw, 1rem) 0 clamp(0.75rem, 3vw, 1rem);
+        margin-bottom: clamp(5rem, 10vw, 7rem) !important; /* Significantly increased spacing to prevent overlap on mobile */
+        padding-bottom: clamp(1rem, 2vw, 2rem); /* Additional padding for buffer */
+        z-index: 10;
+        position: relative;
     }
 
     .projects-wrapper-swap {
         height: clamp(350px, 55vw, 500px);
-        padding: clamp(0.5rem, 1.5vw, 1rem) clamp(0.5rem, 1.5vw, 1rem);
+        padding: clamp(1.5rem, 3vw, 2.5rem) clamp(0.5rem, 1.5vw, 1rem) clamp(0.5rem, 1.5vw, 1rem) clamp(0.5rem, 1.5vw, 1rem);
+        margin-top: clamp(2rem, 4vw, 3rem) !important; /* Increased top margin to create extra space from header */
         margin-bottom: 0;
+        position: relative;
+        z-index: 1;
     }
 }
 
@@ -277,18 +287,34 @@
     }
 
     .projects-header {
-        margin: clamp(1rem, 3vw, 1.5rem) clamp(0.5rem, 2vw, 0.75rem) clamp(0.75rem, 2vw, 1.25rem) clamp(0.5rem, 2vw, 0.75rem);
+        margin: clamp(1rem, 3vw, 1.5rem) clamp(0.5rem, 2vw, 0.75rem) 0 clamp(0.5rem, 2vw, 0.75rem);
+        margin-bottom: clamp(4.5rem, 9vw, 6.5rem) !important; /* Significantly increased spacing to prevent overlap on small mobile */
+        padding-bottom: clamp(1rem, 2vw, 1.5rem); /* Additional padding for buffer */
+        z-index: 10;
+        position: relative;
     }
 
     .projects-wrapper-swap {
         height: clamp(320px, 65vw, 450px);
-        padding: clamp(0.5rem, 1.2vw, 0.75rem) clamp(0.5rem, 1.2vw, 0.75rem);
+        padding: clamp(1.5rem, 3vw, 2rem) clamp(0.5rem, 1.2vw, 0.75rem) clamp(0.5rem, 1.2vw, 0.75rem) clamp(0.5rem, 1.2vw, 0.75rem);
+        margin-top: clamp(1.5rem, 3vw, 2.5rem) !important; /* Increased top margin to create extra space from header */
         margin-bottom: 0;
+        position: relative;
+        z-index: 1;
     }
 }
 
 @media (max-width: 360px) {
     .projects-header {
-        margin: clamp(0.75rem, 2.5vw, 1rem) clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2.5vw, 1.5rem) clamp(0.5rem, 1.5vw, 0.75rem);
+        margin: clamp(0.75rem, 2.5vw, 1rem) clamp(0.5rem, 1.5vw, 0.75rem) 0 clamp(0.5rem, 1.5vw, 0.75rem);
+        margin-bottom: clamp(4rem, 8vw, 5.5rem) !important; /* Significantly increased spacing to prevent overlap on very small screens */
+        padding-bottom: clamp(0.75rem, 1.5vw, 1.25rem); /* Additional padding for buffer */
+        z-index: 10;
+        position: relative;
+    }
+
+    .projects-wrapper-swap {
+        margin-top: clamp(1.25rem, 2.5vw, 2rem) !important; /* Extra spacing on very small screens */
+        padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
     }
 }
