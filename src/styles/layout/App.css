@@ -21,7 +21,17 @@ section {
 /* Only apply min-height to hero section */
 section:first-of-type {
   min-height: 100vh;
-  min-height: -webkit-fill-available;
+  min-height: 100dvh; /* Use dynamic viewport height for better mobile support */
+  position: relative;
+  display: block;
+  overflow: visible;
+}
+
+/* iOS Safari specific fix for hero section */
+@supports (-webkit-touch-callout: none) {
+  section:first-of-type {
+    min-height: -webkit-fill-available;
+  }
 }
 
 #root {

@@ -14,10 +14,26 @@
   box-sizing: border-box;
 }
 
-/* Fix for mobile browsers with address bar */
+/* Fix for mobile browsers with address bar - especially iOS Safari */
 @supports (-webkit-touch-callout: none) {
   .hero-container {
+    height: -webkit-fill-available;
     min-height: -webkit-fill-available;
+  }
+}
+
+/* Additional fix for iOS Safari viewport issues */
+@media screen and (max-width: 768px) {
+  .hero-container {
+    height: 100dvh; /* Use dynamic viewport height if supported */
+    min-height: 100dvh;
+  }
+  
+  @supports (-webkit-touch-callout: none) {
+    .hero-container {
+      height: -webkit-fill-available;
+      min-height: -webkit-fill-available;
+    }
   }
 }
 
@@ -32,6 +48,9 @@
   width: 100%;
   padding: 2rem;
   box-sizing: border-box;
+  position: relative;
+  opacity: 1; /* Ensure content is always visible */
+  visibility: visible; /* Ensure content is always visible */
 }
 
 /* Portrait */
@@ -167,6 +186,28 @@
   }
 }
 
+/* Ensure animations don't cause content to disappear on mobile */
+@media screen and (max-width: 768px) {
+  .hero-name,
+  .hero-intro {
+    animation-fill-mode: both;
+    /* Ensure content is visible even if animation doesn't complete */
+    will-change: opacity, transform;
+  }
+  
+  /* Fallback: ensure content is visible after a short delay */
+  .hero-content {
+    animation: ensureVisible 0.1s 0.5s forwards;
+  }
+}
+
+@keyframes ensureVisible {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 /* Tablet and smaller desktop */
 @media (max-width: 1024px) {
   .hero-container {
@@ -187,15 +228,36 @@
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .hero-container {
-    height: 100vh;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
+    height: 100dvh; /* Use dynamic viewport height */
+    min-height: 100dvh;
     padding: 1rem;
+    padding-top: clamp(5rem, 12vw, 7rem); /* Add top padding for fixed header */
+    position: relative;
+    overflow: visible; /* Allow content to be visible */
+    display: flex !important; /* Force flex display */
+    align-items: center !important; /* Force center alignment */
+    justify-content: center !important; /* Force center alignment */
+  }
+  
+  /* iOS Safari specific fix */
+  @supports (-webkit-touch-callout: none) {
+    .hero-container {
+      height: -webkit-fill-available;
+      min-height: -webkit-fill-available;
+    }
   }
   
   .hero-content {
     padding: 1.5rem 1rem;
     max-width: 100%;
+    position: relative;
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    transform: none; /* Reset any transforms that might hide content */
+    display: flex !important; /* Force flex display */
+    flex-direction: column !important; /* Force column layout */
+    align-items: center !important; /* Force center alignment */
   }
   
   .hero-portrait {
@@ -233,8 +295,17 @@
 @media (max-width: 480px) {
   .hero-container {
     padding: 0.75rem;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
+    height: 100dvh;
+    min-height: 100dvh;
+    position: relative;
+    overflow: visible;
+  }
+  
+  @supports (-webkit-touch-callout: none) {
+    .hero-container {
+      height: -webkit-fill-available;
+      min-height: -webkit-fill-available;
+    }
   }
   
   .hero-content {
