@@ -4,10 +4,13 @@
    Minimal centered hero section with portrait
    ============================================ */
 
-import React from 'react';
+import React, { useState } from 'react';
 import './HeroSection.css';
+import { ResumeModal } from '../../shared/ResumeModal';
 
 export const HeroSection = () => {
+  const [showResume, setShowResume] = useState(false);
+
   return (
     <div className="hero-container">
       <div className="hero-content">
@@ -31,11 +34,19 @@ export const HeroSection = () => {
           <p className="hero-current">
             Currently working at <span className="hero-company">Buzzit</span>
           </p>
+          <button
+            className="hero-resume-btn"
+            onClick={() => setShowResume(true)}
+          >
+            Resume
+          </button>
         </div>
       </div>
       
       {/* Subtle background decoration */}
       <div className="hero-decoration"></div>
+
+      {showResume && <ResumeModal onClose={() => setShowResume(false)} />}
     </div>
   );
 };

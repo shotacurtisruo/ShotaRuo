@@ -12,6 +12,7 @@ import { Footer } from './components/layout/Footer';
 import { HeroSection } from './components/features/hero/HeroSection';
 import { ExperienceSection } from './components/features/experience/ExperienceSection';
 import { ProjectsSection } from './components/features/projects/ProjectsSection';
+import { PhotoSection } from './components/features/photos/PhotoSection';
 
 /**
  * Main App Component
@@ -45,6 +46,9 @@ function App() {
         <section id="myprojects">
           <ProjectsSection />
         </section>
+
+        {/* Photos Section */}
+        <PhotoSection />
       </main>
       
       {/* Footer with Social Links */}

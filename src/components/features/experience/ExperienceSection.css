@@ -43,20 +43,6 @@
     }
 }
 
-/* Model Viewer Container - Dynamically Sized */
-.experience-model-viewer {
-    width: 100%;
-    max-width: clamp(280px, 35vw, 500px);
-    height: clamp(150px, 25vw, 250px);
-    margin: 0 auto clamp(1rem, 3vw, 2rem) auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: visible !important;
-    position: relative;
-    z-index: 10;
-    clip-path: none !important;
-}
 
 /* Timeline Container */
 .experience-timeline {

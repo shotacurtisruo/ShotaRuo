@@ -5,7 +5,8 @@
 export const NAV_LINKS = [
   { id: 'home', label: 'Home', href: '#animation' },
   { id: 'experience', label: 'Experience', href: '#experience' },
-  { id: 'projects', label: 'My Projects', href: '#myprojects' },
+  { id: 'projects', label: 'Projects', href: '#myprojects' },
+  { id: 'photos', label: 'Photos', href: '#photos' },
 ];
 
 export const SOCIAL_LINKS = {

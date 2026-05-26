@@ -10,7 +10,6 @@
 import './ExperienceSection.css';
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
-import { ModelViewer } from '../../shared/ModelViewer';
 
 const experienceData = [
   {
@@ -67,18 +66,6 @@ const experienceData = [
 export const ExperienceSection = () => {
     return (
         <div id="main">
-            {/* 3D Model Viewer */}
-            <div className="experience-model-viewer">
-                <ModelViewer 
-                    modelPath="/models/macbook_pro_m3_16_inch_2024.glb"
-                    autoRotate={true}
-                    enableZoom={false}
-                    enablePan={false}
-                    cameraPosition={[0, 0, 5]}
-                    modelScale={0.06}
-                />
-            </div>
-
             {/* Section Header */}
             <div className="experience-header">
                 <h1>Experience</h1>
