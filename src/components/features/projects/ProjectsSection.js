@@ -16,9 +16,9 @@ const projectsData = [
   },
   {
     num: '03',
-    title: 'Coming Soon',
-    description: 'Something new in the works.',
-    link: '',
+    title: 'uotani (魚谷)',
+    description: 'Fishing spot finder for Japan.',
+      link: 'https://uotani.vercel.app/',
   },
 ];
 
