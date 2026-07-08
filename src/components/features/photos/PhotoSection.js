@@ -7,7 +7,7 @@ const PHOTOS = [
   { src: '/images/photos/IMG_1812.webp',          label: 'calm' },
   { src: '/images/photos/IMG_2842.webp',          label: 'lake' },
   { src: '/images/photos/IMG_3731.webp',          label: 'sunset' },
-  { src: '/images/photos/IMG_3746.webp',          label: 'elsie' },
+  { src: '/images/photos/IMG_3746.webp',          label: 'elsie ~7/8/26' },
   { src: '/images/photos/IMG_3812.webp',          label: 'hoops' },
   { src: '/images/photos/IMG_5962.webp',          label: 'hike' },
 ];
