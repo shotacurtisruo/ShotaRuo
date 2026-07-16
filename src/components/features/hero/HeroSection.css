@@ -22,19 +22,45 @@
   }
 }
 
-/* Additional fix for iOS Safari viewport issues */
 @media screen and (max-width: 768px) {
   .hero-container {
-    height: 100dvh; /* Use dynamic viewport height if supported */
+    height: 100dvh;
     min-height: 100dvh;
   }
-  
+
   @supports (-webkit-touch-callout: none) {
     .hero-container {
       height: -webkit-fill-available;
       min-height: -webkit-fill-available;
     }
   }
+}
+
+/* ============================================
+   Washed scenic backdrop (horizon-anchored)
+   ============================================ */
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center bottom;
+  filter: grayscale(22%) brightness(1.02);
+  opacity: 0.52;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #FAFAFA 0%,
+    rgba(250, 250, 250, 0.55) 42%,
+    rgba(250, 250, 250, 0.1) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -49,38 +75,68 @@
   padding: 2rem;
   box-sizing: border-box;
   position: relative;
-  opacity: 1; /* Ensure content is always visible */
-  visibility: visible; /* Ensure content is always visible */
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Portrait */
+/* ============================================
+   Portrait: ASCII resolves to real photo on hover
+   ============================================ */
 .hero-portrait {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 2.5rem;
   position: relative;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 2.25rem;
+  animation: fadeInUp 0.8s ease-out;
 }
 
-.hero-portrait img {
+.hero-ascii {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 6px;
+  line-height: 6px;
+  letter-spacing: 0;
+  color: #333;
+  white-space: pre;
+  overflow: hidden;
+  border-radius: 50%;
+  transition: opacity 0.4s ease;
+  opacity: 1;
+  user-select: none;
+}
+
+.hero-portrait-real {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.08),
-    0 2px 8px rgba(0, 0, 0, 0.04);
-  border: 3px solid rgba(255, 255, 255, 0.8);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.hero-portrait:hover img {
+.hero-portrait:hover .hero-ascii {
+  opacity: 0;
+}
+
+.hero-portrait:hover .hero-portrait-real {
+  opacity: 1;
   transform: scale(1.02);
-  box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.12),
-    0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* Name with Shiny Text Effect */
+/* ============================================
+   Kinetic name
+   ============================================ */
 .hero-name {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(3rem, 8vw, 5rem);
@@ -88,37 +144,30 @@
   letter-spacing: -0.02em;
   margin: 0 0 1.5rem 0;
   line-height: 1.1;
-  position: relative;
+  color: #1c1c1c;
+  text-shadow: 0 1px 20px rgba(250, 250, 250, 0.55);
+}
+
+.hero-letter {
   display: inline-block;
-  
-  /* Shiny text effect - gradient that sweeps across */
-  background: linear-gradient(
-    110deg,
-    #222 0%,
-    #222 25%,
-    rgba(255, 255, 255, 0.95) 50%,
-    #222 75%,
-    #222 100%
-  );
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: 
-    fadeInUp 0.8s ease-out,
-    shine 6s linear infinite;
+  opacity: 0;
+  animation: letterIn 0.55s ease forwards;
 }
 
-@keyframes shine {
-  0% {
-    background-position: 200% center;
+@keyframes letterIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.35em);
   }
-  100% {
-    background-position: -200% center;
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 
-/* Introduction */
+/* ============================================
+   Introduction
+   ============================================ */
 .hero-intro {
   display: flex;
   flex-direction: column;
@@ -133,22 +182,24 @@
   color: #333;
   margin: 0;
   letter-spacing: -0.01em;
+  min-height: 1.75rem;
 }
 
-.hero-description {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
-  font-weight: 400;
-  color: #666;
-  margin: 0;
-  line-height: 1.6;
+.hero-role {
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.28s ease;
+}
+
+.hero-role:not(.is-visible) {
+  opacity: 0;
 }
 
 .hero-current {
   font-family: 'Inter', sans-serif;
   font-size: clamp(0.95rem, 2.2vw, 1.1rem);
   font-weight: 400;
-  color: #888;
+  color: #777;
   margin: 0.75rem 0 0 0;
   line-height: 1.6;
 }
@@ -175,6 +226,7 @@
   border-radius: 100px;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(2px);
 }
 
 .hero-resume-btn:hover {
@@ -184,22 +236,6 @@
 
 .hero-resume-btn:active {
   transform: translateY(0);
-}
-
-/* Subtle background decoration */
-.hero-decoration {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(0, 0, 0, 0.02) 0%,
-    transparent 50%
-  );
-  pointer-events: none;
-  z-index: 1;
 }
 
 /* Animations */
@@ -214,25 +250,18 @@
   }
 }
 
-/* Ensure animations don't cause content to disappear on mobile */
-@media screen and (max-width: 768px) {
-  .hero-name,
+/* Respect reduced-motion: show everything static */
+@media (prefers-reduced-motion: reduce) {
+  .hero-portrait,
   .hero-intro {
-    animation-fill-mode: both;
-    /* Ensure content is visible even if animation doesn't complete */
-    will-change: opacity, transform;
+    animation: none;
   }
-  
-  /* Fallback: ensure content is visible after a short delay */
-  .hero-content {
-    animation: ensureVisible 0.1s 0.5s forwards;
-  }
-}
-
-@keyframes ensureVisible {
-  to {
+  .hero-letter {
     opacity: 1;
-    visibility: visible;
+    animation: none;
+  }
+  .hero-role {
+    transition: none;
   }
 }
 
@@ -241,40 +270,39 @@
   .hero-container {
     padding: 1.5rem;
   }
-  
+
   .hero-content {
     padding: 1.5rem;
   }
-  
+
   .hero-portrait {
-    width: 140px;
-    height: 140px;
-    margin-bottom: 2.25rem;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 2rem;
   }
 }
 
-/* Mobile responsiveness */
+/* Mobile: skip ASCII (unreadable small), show real photo */
 @media (max-width: 768px) {
   .hero-container {
-    height: 100dvh; /* Use dynamic viewport height */
+    height: 100dvh;
     min-height: 100dvh;
     padding: 1rem;
-    padding-top: clamp(5rem, 12vw, 7rem); /* Add top padding for fixed header */
+    padding-top: clamp(5rem, 12vw, 7rem);
     position: relative;
-    overflow: visible; /* Allow content to be visible */
-    display: flex !important; /* Force flex display */
-    align-items: center !important; /* Force center alignment */
-    justify-content: center !important; /* Force center alignment */
+    overflow: hidden;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
-  
-  /* iOS Safari specific fix */
+
   @supports (-webkit-touch-callout: none) {
     .hero-container {
       height: -webkit-fill-available;
       min-height: -webkit-fill-available;
     }
   }
-  
+
   .hero-content {
     padding: 1.5rem 1rem;
     max-width: 100%;
@@ -282,37 +310,40 @@
     z-index: 10;
     opacity: 1;
     visibility: visible;
-    transform: none; /* Reset any transforms that might hide content */
-    display: flex !important; /* Force flex display */
-    flex-direction: column !important; /* Force column layout */
-    align-items: center !important; /* Force center alignment */
+    transform: none;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
-  
+
   .hero-portrait {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     margin-bottom: 2rem;
   }
-  
+
+  .hero-ascii {
+    display: none;
+  }
+
+  .hero-portrait-real {
+    opacity: 1;
+  }
+
   .hero-name {
     font-size: clamp(2rem, 10vw, 3.5rem);
     margin-bottom: 1.25rem;
   }
-  
+
   .hero-intro {
     gap: 0.5rem;
     width: 100%;
   }
-  
+
   .hero-title {
     font-size: clamp(1.1rem, 4vw, 1.5rem);
   }
-  
-  .hero-description {
-    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
-    line-height: 1.5;
-  }
-  
+
   .hero-current {
     font-size: clamp(0.85rem, 3vw, 1rem);
     margin-top: 0.5rem;
@@ -326,45 +357,40 @@
     height: 100dvh;
     min-height: 100dvh;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
   }
-  
+
   @supports (-webkit-touch-callout: none) {
     .hero-container {
       height: -webkit-fill-available;
       min-height: -webkit-fill-available;
     }
   }
-  
+
   .hero-content {
     padding: 1rem 0.75rem;
   }
-  
+
   .hero-portrait {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     margin-bottom: 1.5rem;
   }
-  
+
   .hero-name {
     font-size: clamp(1.75rem, 12vw, 2.5rem);
     margin-bottom: 1rem;
     line-height: 1.15;
   }
-  
+
   .hero-intro {
     gap: 0.4rem;
   }
-  
+
   .hero-title {
     font-size: clamp(1rem, 4.5vw, 1.3rem);
   }
-  
-  .hero-description {
-    font-size: clamp(0.85rem, 3.8vw, 1rem);
-    line-height: 1.5;
-  }
-  
+
   .hero-current {
     font-size: clamp(0.8rem, 3.2vw, 0.95rem);
     margin-top: 0.5rem;
@@ -376,32 +402,24 @@
   .hero-container {
     padding: 0.5rem;
   }
-  
+
   .hero-content {
     padding: 0.75rem 0.5rem;
   }
-  
+
   .hero-portrait {
-    width: 90px;
-    height: 90px;
+    width: 96px;
+    height: 96px;
     margin-bottom: 1.25rem;
   }
-  
+
   .hero-name {
     font-size: clamp(1.5rem, 14vw, 2rem);
     margin-bottom: 0.875rem;
   }
-  
+
   .hero-title {
     font-size: clamp(0.95rem, 5vw, 1.2rem);
-  }
-  
-  .hero-description {
-    font-size: clamp(0.8rem, 4vw, 0.95rem);
-  }
-  
-  .hero-current {
-    font-size: clamp(0.75rem, 3.5vw, 0.9rem);
   }
 }
 
@@ -412,21 +430,21 @@
     height: auto;
     padding: 2rem 1rem;
   }
-  
+
   .hero-content {
     padding: 1.5rem;
   }
-  
+
   .hero-portrait {
     width: 100px;
     height: 100px;
     margin-bottom: 1.5rem;
   }
-  
+
   .hero-name {
     margin-bottom: 1rem;
   }
-  
+
   .hero-intro {
     gap: 0.3rem;
   }
