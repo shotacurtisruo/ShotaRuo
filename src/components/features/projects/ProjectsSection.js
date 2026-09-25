@@ -4,9 +4,9 @@ import './ProjectsSection.css';
 const projectsData = [
   {
     num: '01',
-    title: 'Chrome Extension',
-    description: 'Save and manage browser tabs directly on your computer.',
-    link: 'https://github.com/shotacurtisruo/chrome-web-browser-version-1.1',
+    title: 'Nibbit',
+    description: 'Three tiny coding challenges a day. Download on iOS.',
+    link: 'https://nibbit-landing.web.app',
   },
   {
     num: '02',

@@ -37,7 +37,7 @@ const EXPERIENCE = [
 ];
 
 const PROJECTS = [
-  ['Chrome Extension', 'save and manage browser tabs', 'https://github.com/shotacurtisruo/chrome-web-browser-version-1.1'],
+  ['Nibbit', 'three tiny coding challenges a day', 'https://nibbit-landing.web.app'],
   ['Sho AI', 'chatbot that answers questions about me', 'https://sho-ai.vercel.app/'],
   ['uotani (魚谷)', 'fishing web game featuring Japan', 'https://uotani.vercel.app/'],
 ];
