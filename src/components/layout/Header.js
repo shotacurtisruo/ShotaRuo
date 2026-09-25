@@ -7,10 +7,12 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/layout/App.css';
 import './Header.css';
+import { useTheme } from '../../hooks/useTheme';
 
 export const Header = () => {
   const [activeSection, setActiveSection] = useState('');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [theme, toggleTheme] = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,7 +80,7 @@ export const Header = () => {
       }}></div>
       <nav className="header-nav">
         {navItems.map((item) => (
-          <a 
+          <a
             key={item.id}
             href={`#${item.id}`}
             className={`nav-item ${activeSection === item.id ? 'active' : ''}`}
@@ -89,6 +91,31 @@ export const Header = () => {
             <div className="nav-dot"></div>
           </a>
         ))}
+        <button
+          type="button"
+          className="theme-toggle"
+          onClick={toggleTheme}
+          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+        >
+          {theme === 'dark' ? (
+            <svg className="theme-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="4" />
+              <line x1="12" y1="2" x2="12" y2="4.5" />
+              <line x1="12" y1="19.5" x2="12" y2="22" />
+              <line x1="4.5" y1="12" x2="2" y2="12" />
+              <line x1="22" y1="12" x2="19.5" y2="12" />
+              <line x1="6.3" y1="6.3" x2="4.6" y2="4.6" />
+              <line x1="19.4" y1="19.4" x2="17.7" y2="17.7" />
+              <line x1="6.3" y1="17.7" x2="4.6" y2="19.4" />
+              <line x1="19.4" y1="4.6" x2="17.7" y2="6.3" />
+            </svg>
+          ) : (
+            <svg className="theme-toggle-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 1020.354 15.354z" />
+            </svg>
+          )}
+        </button>
       </nav>
       <div className="header-decoration">
         <div className="decoration-circle"></div>

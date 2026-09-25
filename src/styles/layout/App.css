@@ -4,7 +4,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #FAFAFA;
+  background-color: var(--bg-page);
 }
 html {
   scroll-behavior: smooth;
@@ -33,7 +33,7 @@ section:first-of-type {
 
 #root {
   height: 100%;
-  background-color: #FAFAFA;
+  background-color: var(--bg-page);
 }
 
 .App {
@@ -58,29 +58,29 @@ section:first-of-type {
 h1 {
   font-family: 'Inter', sans-serif;
   font-size: clamp(1.5rem, 2vw, 2rem);
-  color: black;
+  color: var(--text-primary);
 }
 h2 {
   font-family: 'Inter', sans-serif;
   font-size: clamp(1.25rem, 1.5vw, 1.5rem);
   padding: clamp(8px, 1vw, 10px);
-  color: #222;
+  color: var(--text-primary);
 }
 h3 {
   font-family: 'Inter', sans-serif;
   font-size: clamp(0.875rem, 1.5vh, 1rem);
-  color: black;
+  color: var(--text-primary);
 }
 h4 {
   font-family: 'Inter', sans-serif;
   font-size: clamp(1.25rem, 2vw, 1.5rem);
   padding: clamp(10px, 1.5vw, 15px);
-  color: #222;
+  color: var(--text-primary);
 }
 
 p {
   font-family: 'Inter', sans-serif;
-  color: black;
+  color: var(--text-primary);
   font-size: clamp(0.875rem, 1.5vw, 1rem);
   padding: clamp(2px, 0.5vw, 4px);
 }
