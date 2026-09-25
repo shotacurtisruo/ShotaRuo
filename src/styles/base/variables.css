@@ -1,3 +1,139 @@
+/* ============================================
+   THEME TOKENS (light default, dark overrides)
+   ============================================ */
+:root {
+  color-scheme: light;
+
+  /* Page & surfaces */
+  --bg-page: #FAF6EF;
+  --bg-surface: #FFFCF7;
+  --bg-surface-muted: #F0EAE0;
+  --bg-overlay: rgba(26, 23, 19, 0.45);
+
+  /* Floating glass nav */
+  --bg-glass: rgba(255, 252, 247, 0.9);
+  --bg-glass-item: rgba(255, 255, 255, 0.6);
+  --bg-glass-item-hover: rgba(26, 23, 19, 0.06);
+  --bg-glass-item-active: rgba(26, 23, 19, 0.045);
+  --border-glass: rgba(255, 255, 255, 0.8);
+  --glass-highlight: rgba(255, 255, 255, 0.9);
+
+  /* Text */
+  --text-primary: #1A1713;
+  --text-secondary: #4F4840;
+  --text-tertiary: #7A7267;
+  --text-muted: #94897B;
+  --text-faint: #C5BAA9;
+
+  /* Borders / dividers */
+  --border-hairline: rgba(26, 23, 19, 0.08);
+  --border-soft: rgba(26, 23, 19, 0.14);
+
+  /* Buttons / controls */
+  --control-bg: rgba(26, 23, 19, 0.06);
+  --control-bg-hover: rgba(26, 23, 19, 0.11);
+
+  /* Warm accent */
+  --accent: #B4542B;
+
+  /* Inverted surface — hover floods, primary buttons */
+  --surface-invert-bg: #1D1915;
+  --surface-invert-bg-hover: #3A332B;
+  --surface-invert-text: #FFFCF7;
+  --surface-invert-muted: rgba(255, 252, 247, 0.65);
+
+  /* Portrait ring */
+  --ring-color: rgba(255, 252, 247, 0.92);
+
+  /* Soft glow matching the page background (e.g. behind kinetic text) */
+  --text-glow: rgba(250, 246, 239, 0.55);
+
+  /* Atmosphere */
+  --glow: rgba(180, 84, 43, 0.075);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+
+    --bg-page: #15120E;
+    --bg-surface: #1F1B16;
+    --bg-surface-muted: #28231D;
+    --bg-overlay: rgba(0, 0, 0, 0.65);
+
+    --bg-glass: rgba(31, 27, 22, 0.82);
+    --bg-glass-item: rgba(243, 237, 227, 0.06);
+    --bg-glass-item-hover: rgba(243, 237, 227, 0.1);
+    --bg-glass-item-active: rgba(243, 237, 227, 0.08);
+    --border-glass: rgba(243, 237, 227, 0.1);
+    --glass-highlight: rgba(243, 237, 227, 0.06);
+
+    --text-primary: #F3EDE3;
+    --text-secondary: #CDC3B5;
+    --text-tertiary: #A19686;
+    --text-muted: #8B8072;
+    --text-faint: #4B4338;
+
+    --border-hairline: rgba(243, 237, 227, 0.09);
+    --border-soft: rgba(243, 237, 227, 0.16);
+
+    --control-bg: rgba(243, 237, 227, 0.08);
+    --control-bg-hover: rgba(243, 237, 227, 0.14);
+
+    --accent: #E0905C;
+
+    --surface-invert-bg: #F3EDE3;
+    --surface-invert-bg-hover: #CDC3B5;
+    --surface-invert-text: #15120E;
+    --surface-invert-muted: rgba(21, 18, 14, 0.65);
+
+    --ring-color: rgba(243, 237, 227, 0.14);
+    --text-glow: rgba(21, 18, 14, 0.55);
+
+    --glow: rgba(224, 144, 92, 0.085);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg-page: #15120E;
+  --bg-surface: #1F1B16;
+  --bg-surface-muted: #28231D;
+  --bg-overlay: rgba(0, 0, 0, 0.65);
+
+  --bg-glass: rgba(31, 27, 22, 0.82);
+  --bg-glass-item: rgba(243, 237, 227, 0.06);
+  --bg-glass-item-hover: rgba(243, 237, 227, 0.1);
+  --bg-glass-item-active: rgba(243, 237, 227, 0.08);
+  --border-glass: rgba(243, 237, 227, 0.1);
+  --glass-highlight: rgba(243, 237, 227, 0.06);
+
+  --text-primary: #F3EDE3;
+  --text-secondary: #CDC3B5;
+  --text-tertiary: #A19686;
+  --text-muted: #8B8072;
+  --text-faint: #4B4338;
+
+  --border-hairline: rgba(243, 237, 227, 0.09);
+  --border-soft: rgba(243, 237, 227, 0.16);
+
+  --control-bg: rgba(243, 237, 227, 0.08);
+  --control-bg-hover: rgba(243, 237, 227, 0.14);
+
+  --accent: #E0905C;
+
+  --surface-invert-bg: #F3EDE3;
+  --surface-invert-bg-hover: #CDC3B5;
+  --surface-invert-text: #15120E;
+  --surface-invert-muted: rgba(21, 18, 14, 0.65);
+
+  --ring-color: rgba(243, 237, 227, 0.14);
+  --text-glow: rgba(21, 18, 14, 0.55);
+
+  --glow: rgba(224, 144, 92, 0.085);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +141,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 code {

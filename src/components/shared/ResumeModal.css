@@ -1,7 +1,7 @@
 .resume-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: var(--bg-overlay);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 2000;
@@ -18,7 +18,7 @@
 }
 
 .resume-modal {
-  background: #fff;
+  background: var(--bg-surface);
   border-radius: 20px;
   box-shadow:
     0 32px 80px rgba(0, 0, 0, 0.18),
@@ -42,7 +42,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid var(--border-hairline);
   flex-shrink: 0;
 }
 
@@ -50,7 +50,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #1d1d1f;
+  color: var(--text-primary);
   letter-spacing: -0.01em;
 }
 
@@ -62,21 +62,21 @@
   height: 32px;
   border-radius: 50%;
   border: none;
-  background: rgba(0, 0, 0, 0.05);
-  color: #6e6e73;
+  background: var(--control-bg);
+  color: var(--text-tertiary);
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 .resume-modal-close:hover {
-  background: rgba(0, 0, 0, 0.1);
-  color: #1d1d1f;
+  background: var(--control-bg-hover);
+  color: var(--text-primary);
 }
 
 .resume-preview {
   flex: 1;
   overflow: hidden;
-  background: #f2f2f7;
+  background: var(--bg-surface-muted);
   min-height: 0;
 }
 
@@ -90,7 +90,7 @@
 
 .resume-modal-footer {
   padding: 1.25rem 1.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: 1px solid var(--border-hairline);
   display: flex;
   justify-content: center;
   flex-shrink: 0;
@@ -101,8 +101,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.7rem 2rem;
-  background: #1d1d1f;
-  color: #fff;
+  background: var(--surface-invert-bg);
+  color: var(--surface-invert-text);
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
   font-weight: 500;
@@ -113,7 +113,7 @@
 }
 
 .resume-download-btn:hover {
-  background: #3a3a3c;
+  background: var(--surface-invert-bg-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }

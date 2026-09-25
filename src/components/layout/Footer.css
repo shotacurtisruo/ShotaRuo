@@ -8,10 +8,10 @@
    ============================================ */
 
 .footer {
-    background-color: #FAFAFA;
+    background-color: var(--bg-page);
     padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem) clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem);
     margin-top: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-top: 1px solid var(--border-hairline);
 }
 
 .footer-container {
@@ -102,9 +102,9 @@
     width: 44px;
     height: 44px;
     border-radius: 12px;
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    color: #6e6e73;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-hairline);
+    color: var(--text-tertiary);
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -127,8 +127,8 @@
 .social-link:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0.12);
-    color: #1d1d1f;
+    border-color: var(--border-soft);
+    color: var(--text-primary);
 }
 
 .social-link:hover::before {
@@ -160,7 +160,7 @@
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif;
     font-size: 0.9rem;
     font-weight: 400;
-    color: #86868b;
+    color: var(--text-muted);
     margin: 0;
     letter-spacing: -0.01em;
     display: flex;
@@ -169,16 +169,16 @@
 }
 
 .footer-year {
-    color: #6e6e73;
+    color: var(--text-tertiary);
 }
 
 .footer-separator {
-    color: #c0c0c0;
+    color: var(--text-faint);
     font-weight: 300;
 }
 
 .footer-name {
-    color: #1d1d1f;
+    color: var(--text-primary);
     font-weight: 500;
 }
 

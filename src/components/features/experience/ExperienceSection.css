@@ -25,7 +25,7 @@
 .experience-header h1 {
     font-size: clamp(2rem, 6vw, 3rem);
     font-weight: bold;
-    color: #222;
+    color: var(--text-primary);
     margin: 0;
     font-family: 'Inter', sans-serif;
     letter-spacing: -0.02em;
@@ -59,11 +59,11 @@
     top: 0;
     bottom: 0;
     width: 1px;
-    background: linear-gradient(180deg, 
+    background: linear-gradient(180deg,
         transparent 0%,
-        rgba(0, 0, 0, 0.08) 10%,
-        rgba(0, 0, 0, 0.12) 50%,
-        rgba(0, 0, 0, 0.08) 90%,
+        var(--border-hairline) 10%,
+        var(--border-soft) 50%,
+        var(--border-hairline) 90%,
         transparent 100%);
     transform: translateX(-50%);
     z-index: 0;
@@ -83,13 +83,13 @@
 /* Timeline Card */
 .timeline-card {
     width: 45%;
-    background: white;
+    background: var(--bg-surface);
     border-radius: clamp(12px, 2vw, 16px);
     padding: 0;
-    box-shadow: 
+    box-shadow:
         0 2px 12px rgba(0, 0, 0, 0.04),
         0 1px 4px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-hairline);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -102,10 +102,10 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, 
-        rgba(0, 0, 0, 0.05) 0%,
-        rgba(0, 0, 0, 0.1) 50%,
-        rgba(0, 0, 0, 0.05) 100%);
+    background: linear-gradient(90deg,
+        var(--border-hairline) 0%,
+        var(--border-soft) 50%,
+        var(--border-hairline) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -144,7 +144,7 @@
     gap: clamp(1rem, 2.5vw, 1.5rem);
     margin-bottom: clamp(1rem, 2.5vw, 1.25rem);
     padding-bottom: clamp(1rem, 2.5vw, 1.25rem);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid var(--border-hairline);
 }
 
 /* Timeline Logo */
@@ -152,24 +152,26 @@
     width: clamp(44px, 6vw, 60px);
     height: clamp(44px, 6vw, 60px);
     flex-shrink: 0;
+    /* Fixed light chip (not themed) — several company logos are
+       transparent PNGs authored for a light background */
     background: linear-gradient(135deg, #FAFAFA 0%, #F0F0F0 100%);
     border-radius: clamp(10px, 1.5vw, 12px);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: clamp(0.5rem, 1.2vw, 0.75rem);
-    box-shadow: 
+    box-shadow:
         0 2px 8px rgba(0, 0, 0, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+        inset 0 1px 0 var(--glass-highlight);
+    border: 1px solid var(--border-hairline);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .timeline-card:hover .timeline-logo {
     transform: scale(1.05) translateY(-2px);
-    box-shadow: 
+    box-shadow:
         0 4px 12px rgba(0, 0, 0, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        inset 0 1px 0 var(--glass-highlight);
 }
 
 .timeline-logo img {
@@ -191,7 +193,7 @@
     font-family: 'Inter', sans-serif;
     font-size: clamp(1.1rem, 3vw, 1.5rem);
     font-weight: 600;
-    color: #1a1a1a;
+    color: var(--text-primary);
     margin: 0;
     letter-spacing: -0.02em;
     line-height: 1.2;
@@ -201,7 +203,7 @@
     font-family: 'Inter', sans-serif;
     font-size: clamp(0.875rem, 2vw, 1rem);
     font-weight: 500;
-    color: #666;
+    color: var(--text-tertiary);
     margin: 0;
     letter-spacing: -0.01em;
 }
@@ -217,13 +219,13 @@
     font-family: 'Inter', sans-serif;
     font-size: clamp(0.7rem, 1.5vw, 0.8rem);
     font-weight: 500;
-    color: #999;
+    color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     display: inline-block;
     width: fit-content;
     padding: clamp(0.2rem, 0.5vw, 0.25rem) clamp(0.5rem, 1.2vw, 0.75rem);
-    background: rgba(0, 0, 0, 0.03);
+    background: var(--border-hairline);
     border-radius: clamp(4px, 1vw, 6px);
 }
 
@@ -232,7 +234,7 @@
     font-family: 'Inter', sans-serif;
     font-size: clamp(0.85rem, 2vw, 0.95rem);
     font-weight: 400;
-    color: #555;
+    color: var(--text-secondary);
     margin: 0;
     line-height: 1.65;
     letter-spacing: -0.01em;

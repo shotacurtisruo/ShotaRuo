@@ -1,5 +1,5 @@
 #projects-main {
-  background: #FAFAFA;
+  background: var(--bg-page);
   padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 5vw, 4rem);
 }
 
@@ -12,7 +12,7 @@
   font-family: 'Inter', sans-serif;
   font-size: clamp(2rem, 6vw, 3rem);
   font-weight: bold;
-  color: #222;
+  color: var(--text-primary);
   margin: 0;
   letter-spacing: -0.02em;
 }
@@ -21,7 +21,7 @@
 .projects-bands {
   max-width: 960px;
   margin: 0 auto;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid var(--border-soft);
 }
 
 .p-band {
@@ -30,7 +30,7 @@
   align-items: center;
   gap: clamp(1rem, 3vw, 2rem);
   padding: clamp(1.4rem, 3vw, 2rem) 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--border-soft);
   text-decoration: none;
   color: inherit;
   overflow: hidden;
@@ -41,7 +41,7 @@
 .p-band-flood {
   position: absolute;
   inset: 0;
-  background: #1d1d1f;
+  background: var(--surface-invert-bg);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 0.38s cubic-bezier(0.76, 0, 0.24, 1);
@@ -66,7 +66,7 @@ a.p-band:hover .p-band-flood {
   font-family: 'Inter', sans-serif;
   font-size: 0.72rem;
   font-weight: 400;
-  color: #ccc;
+  color: var(--text-faint);
   letter-spacing: 0.06em;
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
@@ -75,7 +75,7 @@ a.p-band:hover .p-band-flood {
 }
 
 a.p-band:hover .p-num {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--surface-invert-muted);
 }
 
 /* Title */
@@ -83,7 +83,7 @@ a.p-band:hover .p-num {
   font-family: 'Inter', sans-serif;
   font-size: clamp(1.6rem, 4.5vw, 2.75rem);
   font-weight: 300;
-  color: #1d1d1f;
+  color: var(--text-primary);
   letter-spacing: -0.025em;
   line-height: 1;
   flex: 1;
@@ -91,14 +91,14 @@ a.p-band:hover .p-num {
 }
 
 a.p-band:hover .p-title {
-  color: #fff;
+  color: var(--surface-invert-text);
 }
 
 /* Description — hidden by default, slides in on hover */
 .p-desc {
   font-family: 'Inter', sans-serif;
   font-size: clamp(0.75rem, 1.4vw, 0.875rem);
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--surface-invert-muted);
   letter-spacing: -0.01em;
   flex-shrink: 0;
   max-width: 260px;
@@ -115,12 +115,13 @@ a.p-band:hover .p-desc {
 /* Arrow */
 .p-arrow {
   flex-shrink: 0;
-  color: rgba(255, 255, 255, 0);
-  transition: color 0.2s ease 0.05s, transform 0.25s ease;
+  color: var(--surface-invert-text);
+  opacity: 0;
+  transition: color 0.2s ease 0.05s, opacity 0.2s ease 0.05s, transform 0.25s ease;
 }
 
 a.p-band:hover .p-arrow {
-  color: rgba(255, 255, 255, 0.8);
+  opacity: 0.8;
   transform: translate(2px, -2px);
 }
 
@@ -130,11 +131,11 @@ a.p-band:hover .p-arrow {
 }
 
 .p-band--muted .p-title {
-  color: #ccc;
+  color: var(--text-faint);
 }
 
 .p-band--muted .p-num {
-  color: #ddd;
+  color: var(--text-faint);
 }
 
 /* ── Mobile ── */
